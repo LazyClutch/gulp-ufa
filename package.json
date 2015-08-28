@@ -1,0 +1,30 @@
+{
+    "name": "gulp-ufa",
+    "version": "0.0.1",
+    "bin": {
+        "freight": "bin/ufa"
+    },
+    "description": "Dependency Bundling for NPM and Bower",
+    "homepage": "https://github.com/vladikoff/freight",
+    "author": {
+        "name": "vladikoff",
+        "email": "vlad.filippov@gmail.com",
+        "url": "http://vf.io"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git@git.corp.angejia.com:frontend/gulp-ufa.git"
+    },
+    "main": "./ufa",
+    "dependencies": {},
+    "devDependencies": {
+    },
+    "keywords": [
+        "package",
+        "components",
+        "modules",
+        "node_modules",
+        "bower"
+    ]
+}
