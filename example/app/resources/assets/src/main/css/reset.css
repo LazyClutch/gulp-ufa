@@ -1,0 +1,49 @@
+@charset "utf-8";
+html {
+    -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            tap-highlight-color: rgba(0, 0, 0, 0);
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;       
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+ol, ul {
+    list-style: none;
+}
+img {
+    border: none;
+    vertical-align: top;
+    max-width: 100%;
+    height: auto;
+}
+input, select, input, textarea {
+    font-size: 1.2rem;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+fieldset {
+    border: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+caption, th {
+    text-align: left;
+}
+address, cite, code, em, th, i, strong {
+    font-style: normal;
+    font-weight: normal;
+}

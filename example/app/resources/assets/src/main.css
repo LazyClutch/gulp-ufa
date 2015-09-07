@@ -1,0 +1,22 @@
+/* reset.css */
+@import url('main/css/reset.css');
+/* icon css */
+@import url('main/css/iconfont.css');
+/* form css */
+@import url('main/css/form.css');
+
+/* common.css exclude ui components */
+@import url('main/css/common.css');
+
+/* button css */
+@import url('main/css/button/btn.css');
+/* Layout: card css */
+
+/* thumbnail css */
+@import url('main/css/image/image.css');
+/* list css */
+@import url('main/css/list/list.css');
+@import url('main/css/nav/nav.css');
+@import url('main/css/tab/tab.css');
+
+@import url('main/css/detect.css');

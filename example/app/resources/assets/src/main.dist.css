@@ -1,0 +1,560 @@
+/* reset.css */
+
+@charset "utf-8";
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  tap-highlight-color: rgba(0, 0, 0, 0);
+  box-sizing: border-box;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  border: none;
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+select,
+input,
+textarea {
+  font-size: 1.2rem;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+fieldset {
+  border: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+address,
+cite,
+code,
+em,
+th,
+i,
+strong {
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* icon css */
+
+@font-face {
+  font-family: "iconfont";
+  src: url("font/iconfont.eot");
+  /* IE9*/
+  src: url("font/iconfont.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+    url("font/iconfont.woff") format('woff'), /* chrome、firefox */
+    url("font/iconfont.svg#iconfont") format('svg'), /* iOS 4.1- */
+    url("font/iconfont.ttf") format('truetype');
+  /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+}
+
+.iconfont,
+.item-with-arrow::after,
+.check-hock::after {
+  font-family: "iconfont" !important;
+  font-size: 1.6rem;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* START: customize icon class */
+
+.iconfont {
+  color: #a7a7a7;
+}
+
+.icon-label {
+  font-size: 2rem;
+}
+
+.icon-arrow {
+  font-size: 2rem;
+  color: #ccc;
+}
+
+.item-with-arrow::after {
+  content: '\e610';
+  position: absolute;
+  right: 1.5rem;
+  font-size: 2rem;
+  color: #ccc;
+}
+
+/* END: customize icon class */
+
+/* form css */
+
+input {
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  padding-left: 1rem;
+  height: 3.4rem;
+  width: 100%;
+  color: #3E3E3E;
+  font-size: 1.6rem;
+  border: 0;
+}
+
+::-webkit-input-placeholder {
+  color: #CCC;
+  font-weight: normal;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+input.border {
+  border: 1px solid #D9D9D9;
+  border-radius: .3rem;
+}
+
+form {
+  font-size: 12px;
+}
+
+/* common.css exclude ui components */
+
+/* Common CSS */
+
+html {
+  color: #3e3e3e;
+  font: 62.5% "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.page {
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.5rem;
+  background-color: #eee;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+  clear: both;
+  content: ".";
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+a {
+  color: #3e3e3e;
+  text-decoration: none;
+  outline: none;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #3e3e3e;
+}
+
+a.cur {
+  color: #f60;
+}
+
+.hidden {
+  display: none;
+}
+
+/* font-size */
+
+.h1 {
+  font-size: 2.1rem;
+  line-height: 3rem;
+  font-weight: bold;
+}
+
+.h2 {
+  font-size: 1.9rem;
+  line-height: 3rem;
+  font-weight: bold;
+}
+
+.h3 {
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+}
+
+.h4 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.h5 {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+
+/* color */
+
+.txt-primary {
+  color: #3E3E3E;
+}
+
+.txt-muted {
+  color: #8d8c92;
+}
+
+.txt-success {
+  color: #007FFF;
+}
+
+.txt-warning {
+  color: #FF8000;
+}
+
+.txt-error {
+  color: #FF0000;
+}
+
+.txt-important {
+  color: #E54A00;
+}
+
+.txt-info {
+  color: #CCC;
+}
+
+.txt-positive {
+  color: #FF0000;
+}
+
+.txt-negative {
+  color: #2CB200;
+}
+
+.txt-title {
+  color: #000;
+}
+
+.err-txt {
+  padding: .8rem 1.5rem;
+  font-size: 1.2rem;
+  color: #f00;
+}
+
+/* .hr */
+
+.inner-border::after,
+.hr::after {
+  content: '';
+  background: #e7e7e7;
+  height: 0.1rem;
+  display: block;
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+.hr-line {
+  display: block;
+  width: 100%;
+  height: .1rem;
+  background-color: #e7e7e7;
+}
+
+/* pointer-event */
+
+.event-active {
+  pointer-events: auto;
+}
+
+.event-inactive {
+  pointer-events: none;
+}
+
+/* ajax-loading */
+
+.ajax-loading {
+  display: none;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 900;
+}
+
+.ajax-loading.active {
+  display: -webkit-box;
+}
+
+/* button css */
+
+/* Button - size */
+
+.btn {
+  color: #fff;
+  text-align: center;
+  font-size: 1.5rem;
+  border-radius: 0.3rem;
+  background-color: #349ae9;
+}
+
+.btn:link,
+.btn:visited,
+.btn:hover,
+.btn:active {
+  color: #FFF;
+}
+
+a.btn {
+  display: block;
+}
+
+.btn-large {
+  height: 4rem;
+  line-height: 4rem;
+  border-radius: 0.5rem;
+  font-size: 1.7rem;
+}
+
+.btn-medium {
+  height: 3.0rem;
+  line-height: 3.0rem;
+  border-radius: 0.3rem;
+  font-size: 1.6rem;
+}
+
+
+
+/* Button - color */
+
+.btn-primary {
+  background-color: #3E3E3E;
+}
+
+.btn-success {
+  background-color: #007FFF;
+}
+
+.btn-muted {
+  background-color: #8d8c92;
+}
+
+.btn-warning {
+  background-color: #FF8000;
+}
+
+.btn-error {
+  background-color: #FF0000;
+}
+
+.btn-important {
+  background-color: #E54A00;
+}
+
+.btn-info {
+  color: #CCC;
+}
+
+.btn-positive {
+  color: #FF0000;
+}
+
+.btn-negative {
+  color: #2CB200;
+}
+
+.btn-title {
+  color: #000;
+}
+
+.no-sub {
+  opacity: .5;
+}
+
+/* Layout: card css */
+
+/* thumbnail css */
+
+
+
+/* list css */
+
+.list-view {
+  border: 1px solid #E6E6E6;
+  border-radius: 0.4rem;
+  background-color: #FFF;
+  width: 100%;
+}
+
+.list-view .list-item {
+  border-bottom: 1px solid #E6E6E6;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -moz-box-orient: horizontal;
+  -webkit-box-orient: horizontal;
+  box-orient: horizontal;
+}
+
+.list-view .list-item:last-child {
+  border-bottom: none;
+}
+
+.list-view .item-icon,
+.list-view .item-link {
+  display: inline-block;
+  font-size: 2rem;
+  width: 2rem;
+  margin: .6rem;
+}
+
+.list-view .fi-own {
+  -moz-box-align: center;
+  -webkit-box-align: center;
+  box-align: center;
+  border: none;
+  -webkit-box-flex: 1;
+}
+
+.nav {
+  font-size: 16px;
+}
+
+.tab-box {
+  width: 100%;
+  height: 6rem;
+  line-height: 6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  background-color: #fafafa;
+  border: solid #b2b2b2;
+  border-width: 1px 0;
+  -moz-box-orient: horizontal;
+  -webkit-box-orient: horizontal;
+  box-orient: horizontal;
+  box-sizing: border-box;
+}
+
+.tab-one,
+.tab-two,
+.tab-three {
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+}
+
+.tab-last {
+  width: 6rem;
+}
+
+.tab-box>.tab-item {
+  border-right: 1px solid #d6d6d6;
+}
+
+.tab-box>.tab-item:last-child {
+  border-right: 0;
+}
+
+.network-status {
+  display: none;
+  position: fixed;
+  background: #000;
+  color: #eee;
+  width: 100%;
+  text-align: center;
+  bottom: 1rem;
+  margin: 0 auto;
+  opacity: 0.6;
+  font-size: 1.6rem;
+  padding: 1rem;
+}

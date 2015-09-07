@@ -1,0 +1,30 @@
+h1 {
+    line-height: 3rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+    color: #000;
+}
+.content-wrapper {
+  padding: 1.5rem 1rem;
+  line-height: 2rem;
+  font-size: 1.2rem;
+}
+.cjk-ideographic {
+    margin-top: .5rem;
+    font-weight: bold;
+}
+.decimal {
+    padding-left: 2rem;
+    list-style: decimal;
+}
+.important {
+    font-weight: bold;
+    text-decoration: underline;
+}
+p {
+    text-indent: 2rem;
+}
+.no-indent {
+    text-indent: 0;
+}

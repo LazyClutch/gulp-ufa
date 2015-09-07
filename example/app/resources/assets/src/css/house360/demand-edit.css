@@ -1,0 +1,80 @@
+.prompt {
+    padding: 1.5rem;
+    background-color: #fff;
+    border-bottom: .1rem solid #d9d9d9;
+}
+.prompt p {
+    margin-bottom: .6rem;
+    font-size: 1.7rem;
+}
+.prompt p em {
+    color: #f15f00;
+}
+.prompt span {
+    font-size: 1.4rem;
+    color: #8d8c92;
+}
+.community-box {
+    margin-top: 1.5rem;
+    background-color: #fff;
+    border-top: .1rem solid #d9d9d9;
+    border-bottom: .1rem solid #d9d9d9;
+}
+.community-box li {
+    display: -webkit-box;
+    padding: .5rem 1.5rem;
+    line-height: 3.4rem;
+    font-size: 1.6rem;
+    border-bottom: .1rem solid #d9d9d9;
+}
+.community-box li:last-child {
+    border-bottom: 0;
+}
+.community-box li label {
+    display: block;
+    width: 7.5rem;
+}
+.community-box li input {
+    display: block;
+    padding-left: 0;
+    -webkit-box-flex: 1;
+}
+.community-box li textarea {
+    display: block;
+    -webkit-box-flex: 1;
+    line-height: 3.4rem;
+    font-size: 1.6rem;
+    color: #3e3e3e;
+    border: 0;
+}
+.sub-demand {
+    margin: 0 1.5rem 2.5rem;
+}
+.pop-container {
+    position: absolute;
+    top: 0;
+    z-index: 9;
+}
+.pop-content {
+    border-radius: .5rem;
+}
+.pop-suc {
+    width: 100%;
+    line-height: 5rem;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0,0,0,0.9);
+    border-radius: .5rem;
+}
+.ajax-loading i {
+    content: '';
+    display: block;
+    width: 6.4rem;
+    height: 6.4rem;
+    border-radius: .5rem;
+    background: url(../../image/loading128x128.gif) no-repeat center;
+    background-color: #000;
+    background-size: 3.2rem 3.2rem ;
+    opacity: 0.6;
+}

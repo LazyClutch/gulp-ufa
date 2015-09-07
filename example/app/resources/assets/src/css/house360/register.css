@@ -1,0 +1,66 @@
+.content-wrapper {
+    padding-top: 1.5rem;
+    font-size: 1.6rem;
+}
+.box {
+    background-color: #fff;
+    border-top: .1rem solid #d9d9d9;
+    border-bottom: .1rem solid #d9d9d9;
+}
+.box .phone-box {
+    display: -webkit-box;
+    padding: 0;
+}
+.phone-box .fi-phone {
+    display: block;
+    -webkit-box-flex: 1;
+    margin: .5rem 0;
+    padding-left: 1.5rem;
+}
+.phone-box a {
+    display: block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-top: .1rem;
+    width: 10rem;
+    line-height: 4.3rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #ccc;
+    border-left: .1rem solid #e7e7e7;
+}
+.phone-box .codein {
+    color: #3ea0dd;
+}
+
+.box .code-box {
+    padding: .5rem;
+    border-top: .1rem solid #e7e7e7;
+}
+.err-txt {
+    padding: .8rem 1.5rem;
+    font-size: 1.2rem;
+    color: #f00;
+}
+.btn {
+    margin: 0 1.5rem;
+}
+.remark {
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #8d8c92;
+}
+.remark a {
+    color: #007fff;
+}
+.pop-succ {
+    width: 100%;
+    line-height: 5rem;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0,0,0,0.9);
+    border-radius: .5rem;
+}

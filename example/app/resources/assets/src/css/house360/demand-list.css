@@ -1,0 +1,43 @@
+.content-wrapper .no-list {
+    padding: 2rem 0;
+    text-align: center;
+}
+.content-wrapper .community-list {
+    padding-bottom: 10rem;
+}
+.community-list .community-item {
+    padding: 1.5rem 1.5rem 1.2rem;
+    background-color: #fff;
+    border-bottom: .1rem solid #d9d9d9;
+}
+.community-item h3 {
+    font-size: 1.7rem;
+}
+.community-item span {
+    float: right;
+    margin-top: -1.8rem;
+    font-size: 1.2rem;
+    color: #8d8c92;
+}
+.community-item p {
+    margin-top: .4rem;
+    line-height: 2rem;
+    font-size: 1.4rem;
+    color: #8d8c92;
+}
+.content-wrapper .add {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    margin-left: -3rem;
+    width: 6rem;
+    height: 6rem;
+    text-align: center;
+    background-color: #3a8fce;
+    border-radius: 100%;
+}
+.content-wrapper .add i {
+    line-height: 6rem;
+    font-size: 3rem;
+    color: #fff;
+}

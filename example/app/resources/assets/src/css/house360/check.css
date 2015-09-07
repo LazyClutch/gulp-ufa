@@ -1,0 +1,77 @@
+.top {
+    width: 100%;
+    height: .1rem;
+}
+.box {
+    display: -webkit-box;
+    margin: 1.5rem;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    color: #3e9fdd;
+    border: .1rem solid #349ae9;
+    border-radius: .3rem;
+}
+.box a {
+    display: block;
+    -webkit-box-flex: 1;
+    width: 33.3%;
+    border-right: .1rem solid #349ae9;
+}
+.box a:last-child {
+    border-right: 0;
+}
+.box a.active {
+    color: #fff;
+    background-color: #349ae9;
+}
+.list {
+    background-color: #fff;
+    border-top: .1rem solid #d9d9d9;
+    border-bottom: .1rem solid #d9d9d9;
+}
+.list .list-item {
+    padding: 1.5rem 1.5rem 1.3rem;
+    line-height: 2.4rem;
+    border-bottom: .1rem solid #e7e7e7;
+}
+.list .list-item:last-child {
+    border-bottom: 0;
+}
+.list .list-item span {
+    display: block;
+    line-height: 2rem;
+    font-size: 1.2rem;
+}
+.list .list-item .time {
+    color: #8d8c92;
+}
+.list .list-item .first-line {
+    display: -webkit-box;
+}
+.list .first-line h2 {
+    -webkit-box-flex: 1;
+    font-size: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.list .first-line span {
+    width: 10rem;
+    line-height: 2.4rem;
+    font-size: 1.6rem;
+    text-align: right;
+    color: #3e9fdd;
+}
+.list .first-line .fall {
+    color: #f00;
+}
+.list .list-item .time-box {
+    display: -webkit-box;
+}
+.list .time-box .time {
+    -webkit-box-flex: 1;
+}
+.list .list-item .reason {
+    color: #f00;
+}

@@ -1,0 +1,119 @@
+.auto-content {
+    background-color: #fff;
+    cursor: pointer;
+    text-align: left;
+    display: none;
+    box-sizing: border-box;
+}
+.auto-content .item:first-child {
+    border-top: .1rem solid #e7e7e7;
+}
+.auto-content .item {
+    border-bottom: 1px solid #e7e7e7;
+    padding: 1rem 1.4rem;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 6rem;
+    line-height: 6rem;
+    box-sizing: border-box;
+}
+.auto-content .item.extra h3{
+    margin: 0;
+    line-height: 4rem;
+}
+.auto-content h3 {
+    color: #3e3e3e;
+    margin-bottom: .5rem;
+}
+.auto-content h3.h4 {
+    font-size: 1.5rem;
+}
+.auto-content p {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    color: #8d8c92;
+}
+.auto-content .auto-empty p {
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+}
+.auto-content .auto-empty h3 {
+    margin: .5rem 0 0;
+}
+.item:active, .item:hover {
+    background-color: #d9d9d9;
+}
+.btn-cancel {
+    width: 6rem;
+    margin-left: .5rem;
+    padding: 0;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    color: #ff8000;
+    display: inline-block;
+    text-align: center;
+    font-size: 1.6rem;
+}
+.header {
+    display: -webkit-box;
+    box-sizing: border-box;
+    -moz-box-align: center;
+    -webkit-box-align: center;
+    -moz-box-pack: center;
+    -webkit-box-pack: center;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
+    background-color: #eee;
+}
+.header div {
+    position: relative;
+    -webkit-box-flex: 1;
+    height: 3.5rem;
+    line-height: 3.5rem;
+}
+.header i {
+    display: block;
+    position: absolute;
+    top: 0;
+}
+.header i.icon-cancel{
+    display: none;
+    right: 0;
+    width: 4rem;
+    text-align: center;
+    color: #ccc;
+}
+/* tags 的样式 */
+.auto-tags {
+    padding: 1.5rem 0 1.5rem 1.5rem;
+    color: #8d8c92;
+    background-color: #fff;
+    box-sizing: border-box;
+    overflow: hidden;
+    zoom: 1;
+}
+.auto-tags .tag-title {
+    font-size: 1.5rem;
+}
+.auto-tags a {
+    display: block;
+    float: left;
+    font-size: 1.5rem;
+    padding: 0 1.5rem;
+    margin: 1rem 1.2rem 0 0;
+    text-align: center;
+    border-radius: .5rem;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    color: #8d8c92;
+    border: .1rem solid #e7e7e7;
+    box-sizing: border-box;
+}
+.auto-ipt {
+    font-weight: bold;
+    border: .1rem solid #d9d9d9;
+    border-radius: .5rem;
+}

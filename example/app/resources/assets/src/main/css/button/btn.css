@@ -1,0 +1,67 @@
+/* Button - size */
+.btn{
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 0.3rem;
+    background-color: #349ae9;
+}
+.btn:link,
+.btn:visited,
+.btn:hover,
+.btn:active{
+    color:#FFF;
+}
+a.btn{
+    display: block;
+}
+.btn-large{
+    height: 4rem;
+    line-height: 4rem;
+    border-radius: 0.5rem;
+    font-size: 1.7rem;
+}
+.btn-medium{
+    height: 3.0rem;
+    line-height: 3.0rem;
+    border-radius: 0.3rem;
+    font-size: 1.6rem;
+}
+.btn-small{
+
+}
+/* Button - color */
+.btn-primary {
+    background-color: #3E3E3E;
+}
+.btn-success{
+    background-color: #007FFF;
+}
+.btn-muted{
+    background-color: #8d8c92;
+}
+.btn-warning{
+    background-color: #FF8000;
+}
+.btn-error{
+    background-color: #FF0000;
+}
+.btn-important{
+    background-color: #E54A00;
+}
+.btn-info{
+    color: #CCC;
+}
+.btn-positive{
+    color: #FF0000;
+}
+.btn-negative{
+    color: #2CB200;
+}
+.btn-title{
+    color: #000;
+}
+.no-sub {
+    opacity: .5;
+}
+

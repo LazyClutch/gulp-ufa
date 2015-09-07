@@ -1,0 +1,45 @@
+.panel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 600;
+    width: 15rem;
+    background-color: #F6F6F6;
+    -webkit-transform: translate3d(16rem, 0, 0);
+    transform: translate3d(16rem, 0, 0);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    -webkit-box-shadow: -3px 0px 10px #ddd;
+    box-shadow: -3px 0px 10px #ddd;
+}
+.panel-active {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+.nav-aside {
+    line-height: 4.5rem;
+    font-size: 1.6rem;
+    background-color: #fff;
+}
+.nav-aside a {
+    padding-left: 1.5rem;
+    border-bottom: 1px solid #cfcfcf;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+}
+.nav-aside a:active, .nav-aside a:hover {
+    background-color: #eee;
+}
+.hide-mask {
+    display: none;
+}
+.panel-mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 90;
+}

@@ -1,0 +1,36 @@
+.list-view {
+    border: 1px solid #E6E6E6;
+    border-radius: 0.4rem;
+    background-color: #FFF;
+    width: 100%;
+}   
+
+.list-view .list-item {
+    border-bottom: 1px solid #E6E6E6;
+    display: -webkit-box;
+    display: -moz-box;
+    display: flex;
+    -moz-box-orient: horizontal;
+    -webkit-box-orient: horizontal;
+    box-orient: horizontal;
+}
+
+.list-view .list-item:last-child {
+    border-bottom: none;
+}
+
+.list-view .item-icon,
+.list-view .item-link {
+    display: inline-block;
+    font-size: 2rem;
+    width: 2rem;
+    margin: .6rem;
+}
+
+.list-view .fi-own {
+    -moz-box-align: center;
+    -webkit-box-align: center;
+    box-align: center;
+    border: none;
+    -webkit-box-flex: 1;
+}

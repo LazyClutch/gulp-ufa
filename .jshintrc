@@ -1,0 +1,9 @@
+{
+    "undef": true,
+    "unused": true,
+    "browser": true,
+    "predef": ["define", "require", "requirejs", "Zepto", "$"],
+    "camelcase": true,
+    "jquery": true,
+    "qunit": true
+}

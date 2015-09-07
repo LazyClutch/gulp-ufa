@@ -1,0 +1,23 @@
+.up-pic {
+    position: absolute;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+}
+
+.add-pic {
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 2.8rem;
+    text-align: center; 
+    color: #c7c7cc;
+    border: .1rem solid #c7c7cc;
+}

@@ -1,0 +1,182 @@
+.top {
+    width: 100%;
+    height: .1rem;
+}
+.bottom {
+    width: 100%;
+    height: 4.5rem;
+}
+.base-box {
+    margin: 1.5rem 0;
+    padding: 1.5rem 1.5rem 1rem;
+    font-size: 1.5rem;
+    background-color: #fff;
+}
+.base-title h3 {
+    display: inline-block;
+    margin-right: 1.5rem;
+    font-size: 1.7rem;
+}
+.base-title .tags {
+    display: inline-block;
+    margin-right: .6rem;
+    padding: 0 .6rem;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+}
+.base-title .tags.mw {
+    color: #3f96cd;
+    border: .1rem solid #3f96cd;
+}
+.base-title .tags.wy {
+    color: #56b990;
+    border: .1rem solid #56b990;
+}
+.base-box li {
+    line-height: 2.5rem;
+}
+.base-box li span {
+    color: #8d8c92;
+}
+.base-box li .base-price {
+    color: #f15f00;
+}
+.base-box li.item {
+    font-size: 1.2rem;
+    overflow: hidden;
+}
+.base-box .item .time {
+    float: left;
+}
+.base-box .item .times {
+    float: right;
+}
+.invent-box {
+    background-color: #fff;
+}
+.invent-box .invent-title {
+    padding: 0 1.5rem;
+    height: 4.8rem;
+    line-height: 4.8rem;
+    font-size: 1.5rem;
+    border-bottom: .1rem solid #d9d9d9;
+}
+.invent-title a {
+    display: inline-block;
+    width: 72%;
+}
+.invent-title a span {
+    color: #007fff;
+}
+.invent-title .collect {
+    float: right;
+    margin: 1.4rem 0;
+    width: 7rem;
+    line-height: 2rem;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #f15f00;
+    border: .1rem solid #f15f00;
+    border-radius: 1rem;
+}
+.invent-title .collect i {
+    color: #f15f00;
+}
+.invent-title .collect.has {
+    color: #999;
+    background-color: #eee;
+    border-color: #d9d9d9;
+}
+.invent-box .invent-item {
+    display: block;
+    padding: 1.5rem;
+    border-bottom: .1rem solid #e7e7e7;
+}
+.invent-item .item-title {
+    font-size: 1.7rem;
+    overflow: hidden;
+}
+.invent-item .item-title h4 {
+    font-size: 1.7rem;
+}
+.invent-item .item-title .item-price {
+    float: right;
+    margin-top: -2rem;
+    color: #f15f00;
+}
+.invent-item .item-info {
+    display: -webkit-box;
+    display: flex;
+    margin: .8rem 0;
+    font-size: 1.5rem;
+    color: #8d8c92;
+}
+.invent-item .item-info span {
+    display: block;
+}
+.invent-item .item-info .item-addr {
+    -webkit-box-flex: 1;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.invent-item .item-info .item-avg-price {
+    width: 15rem;
+    text-align: right;
+}
+.invent-item .gp-time {
+    font-size: 1.2rem;
+    color: #f18f4c;
+}
+.tel-down {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    font-size: 1.8rem;
+    text-align: center;
+    color: #fff;
+    background-color: #ec9f25;
+}
+.tel-down .tel {
+    display: block;
+    color: #fff;
+}
+.tel-down .tel i {
+    color: #fff;
+}
+.title-tip {
+    padding-top: 4rem;
+    height: 6.5rem;
+    line-height: 1.9rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.err-tel-tip,
+.err-house-tip {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #f00;
+}
+.btn-line {
+    display: -webkit-box;
+    height: 4.4rem;
+    line-height: 4.4rem;
+    font-size: 1.6rem;
+    color: #0079ff;
+    border-top: .1rem solid #d9d9d9;
+}
+.btn-line span {
+    display: block;
+    -webkit-box-flex: 1;
+    width: 50%;
+    text-align: center;
+}
+.btn-line .btn-cancel {
+    border-right: .1rem solid #d9d9d9;
+}

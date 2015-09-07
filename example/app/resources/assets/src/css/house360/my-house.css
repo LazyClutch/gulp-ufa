@@ -1,0 +1,40 @@
+.no-list {
+    padding: 2rem 0;
+    text-align: center;
+}
+.house-item {
+    display: block;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-bottom: .1rem solid #d9d9d9;
+}
+.house-item h3 {
+    font-size: 1.7rem;
+}
+.house-item .price {
+    float: right;
+    margin-top: -2rem;
+    font-size: 1.7rem;
+    color: #e45d0c;
+}
+.house-item .item-bottom {
+    display: -webkit-box;
+    display: flex;
+    margin-top: .6rem;
+    font-size: 1.4rem;
+    color: #8d8c92;
+}
+.house-item .item-bottom span {
+    display: block;
+}
+.house-item .item-bottom .house-info {
+    -webkit-box-flex: 1;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.house-item .item-bottom .time {
+    width: 7rem;
+    text-align: right;
+}

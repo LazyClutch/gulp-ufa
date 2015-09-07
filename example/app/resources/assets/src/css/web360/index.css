@@ -1,0 +1,198 @@
+.page {
+    -webkit-font-smoothing: antialiased;
+    font-family: Tohoma, Arial, 'Helvetica Neue', 'Microsoft YaHei', '微软雅黑','Hiragino Sans GB', sans-serif;
+}
+.house-main {
+    width: 100%;
+    height: 671px;
+    background-color: #54a38f;
+    background: url(../../image/home/fy_bg.png) no-repeat center center;
+    background-size: cover;
+}
+.house-main .cont-wrap {
+    margin: 0 auto;
+    padding: 90px 0 50px;
+    width: 1000px;
+    text-align: center;
+}
+.house-main .logo {
+    margin: 0 auto;
+    width: 420px;
+    height: 155px;
+    text-indent: -9999px;
+    background: url(../../image/home/fy_logo.png) no-repeat;
+    background-size: cover;
+}
+.house-main .subtitle {
+    margin: 40px auto 50px;
+    width: 600px;
+    height: 50px;
+    text-indent: -9999px;
+    background: url(../../image/home/fy_subtitle.png) no-repeat;
+    background-size: cover;
+}
+.house-main .scan-img {
+    width: 175px;
+}
+.house-main .scan {
+    display: block;
+    margin: 24px auto 0;
+    width: 178px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 12px;
+    color: #874b21;
+    background-color: #fbb119;
+    border-radius: 18px;
+}
+.house-keyword {
+    width: 100%;
+    background-color: #fafafa;
+    border-bottom: 4px solid #fff;
+}
+.left-linear {
+    /* chrome 10+, safari 5.1+ */
+    background-image: -webkit-linear-gradient(left, #fefefe, #f4f4f4);
+    /* firefox; multiple color stops */
+    background-image: -moz-linear-gradient(left, #fefefe, #f4f4f4);
+    /* ie 6+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#fefefe', endColorstr='#f4f4f4');
+    /* ie8 + */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#fefefe', endColorstr='#f4f4f4')";
+    /* ie10 */
+    background-image: -ms-linear-gradient(left, #fefefe, #f4f4f4);
+    /* opera 11.1 */
+    background-image: -o-linear-gradient(left, #fefefe, #f4f4f4);
+    /* 标准写法 */
+    background-image: linear-gradient(to right, #fefefe, #f4f4f4);
+}
+.right-linear {
+    /* chrome 10+, safari 5.1+ */
+    background-image: -webkit-linear-gradient(left, #f4f4f4, #fefefe);
+    /* firefox; multiple color stops */
+    background-image: -moz-linear-gradient(left, #f4f4f4, #fefefe);
+    /* ie 6+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#f4f4f4', endColorstr='#fefefe');
+    /* ie8 + */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#f4f4f4', endColorstr='#fefefe')";
+    /* ie10 */
+    background-image: -ms-linear-gradient(left, #f4f4f4, #fefefe);
+    /* opera 11.1 */
+    background-image: -o-linear-gradient(left, #f4f4f4, #fefefe);
+    /* 标准写法 */
+    background-image: linear-gradient(to right, #f4f4f4, #fefefe);
+}
+.house-keyword .keybox {
+    margin: 0 auto;
+    width: 720px;
+    overflow: hidden;
+    zoom: 1;
+}
+.house-keyword .keybox>div {
+    float: left;
+    width: 50%;
+}
+.house-keyword .keybox .key-word {
+    padding-top: 66px;
+}
+.house-keyword .keybox .key-img {
+    padding-top: 25px;
+}
+.house-keyword h3 {
+    width: 230px;
+    height: 80px;
+    text-indent: -9999px;
+    background: url(../../image/home/fy_key.png) no-repeat;
+}
+.house-keyword .key-word {
+    padding-top: 72px;
+}
+.house-keyword .key-word p {
+    margin-top: 32px;
+    font-size: 22px;
+    color: #9e999c;
+}
+.house-keyword .right-word h3 {
+    margin-left: 124px;
+}
+.house-keyword .right-word p {
+    text-align: right;
+}
+.house-keyword .key-kuai {
+    background-position: 0 0;
+}
+.house-keyword .key-zhen {
+    background-position: 0 -80px;
+}
+.house-keyword .key-duo {
+    background-position: 0 -160px;
+}
+.house-keyword .key-img span {
+    display: block;
+    width: 360px;
+    height: 298px;
+    background: url(../../image/home/fy_phone.png) no-repeat;
+}
+.house-keyword .key-img .img-kuai {
+    background-position: 0 -4px;
+}
+.house-keyword .key-img .img-zhen {
+    background-position: 0 -308px;
+}
+.house-keyword .key-img .img-duo {
+    background-position: 0 -616px;
+}
+.house-about {
+    width: 100%;
+    background-color: #fff;
+}
+.house-about .about-box {
+    margin: 0 auto;
+    padding: 34px 0 50px;
+    width: 720px;
+}
+.about-box h2 {
+    position: relative;
+    margin: 16px auto 24px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 30px;
+    text-align: center;
+}
+.about-box .about-img {
+    display: block;
+    margin: 0 auto;
+}
+.about-box h2:before,
+.about-box h2:after {
+    position: absolute;
+    top: 19px;
+    content: '';
+    width: 70px;
+    height: 2px;
+    background-color: #d9d9d9;
+}
+.about-box h2:before {
+    left: 180px;
+}
+.about-box h2:after {
+    right: 180px;
+}
+.about-box h2 i {
+    font-style: italic;
+}
+.about-box p {
+    line-height: 36px;
+    font-size: 18px;
+    color: #8d8c92;
+}
+.footer {
+    height: 76px;
+    line-height: 76px;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    background-color: #40bb9c;
+}
+
+
