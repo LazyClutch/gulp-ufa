@@ -59,7 +59,7 @@ Ufa.prototype.createTask = function (app, taskname, callback) {
     // create single task
     var self = this;
     //TODO::clean
-    var dependences = (['default', 'all'].indexOf() != -1 )? [app + ':clean'] : [];
+    var dependences = (['default', 'all'].indexOf(taskname) != -1 )? [app + ':clean'] : [];
 
     if (this.env === 'dev') {
         console.log('>> Create New Task: ' + app + ':' + taskname);

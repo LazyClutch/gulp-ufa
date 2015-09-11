@@ -1,9 +1,8 @@
 var gulp = require('gulp');
 var browserify = require('gulp-browserify');
-
-var rename = require('gulp-rename'),
-    uglify = require('gulp-uglify'),
-    jshint = require('gulp-jshint');
+var rename = require('gulp-rename');
+var uglify = require('gulp-uglify');
+var jshint = require('gulp-jshint');
 
 function task(cb, params) {
     var appDir = params.app + '/';

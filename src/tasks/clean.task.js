@@ -8,7 +8,7 @@ var folders = [
     'public/font'
 ];
 
-function  task(cb, params) {
+function task(cb, params) {
     var appDir = params.app + '/';
     folders.forEach(function(folder, i){
         folders[i] = appDir + folder;
