@@ -1,6 +1,12 @@
+var gulp = require('gulp');
+var concat = require('gulp-concat');
+var rename = require('gulp-rename');
+var uglify = require('gulp-uglify');
+
 function task(cb, params) {
     var appDir = params.app + '/';
     var destDir = appDir + 'resources/assets/src/lib';
+
 
     //autocomplete
     gulp.src([

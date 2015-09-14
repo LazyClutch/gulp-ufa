@@ -7,8 +7,6 @@ function task(cb, params) {
     var appDir = params.app + '/';
     var destDir = appDir + 'resources/assets/src';
 
-    var notify = require('gulp-notify');
-
     /* Main Javascript file. */
     gulp.src([
             appDir + 'resources/bower/jquery/dist/jquery.min.js',
@@ -20,8 +18,7 @@ function task(cb, params) {
             appDir + 'resources/assets/src/common/navigation.js'
         ])
         .pipe(concat('main.dist.js'))
-        .pipe(gulp.dest(appDir + 'resources/assets/src'))
-        .pipe(notify({message: 'Main Scripts concat task complete'}));
+        .pipe(gulp.dest(appDir + 'resources/assets/src'));
 
     /* Main css file. */
     gulp.src([
@@ -35,8 +32,7 @@ function task(cb, params) {
         .pipe(concat('main.dist.css'))
         .pipe(importcss())
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(gulp.dest(destDir))
-        .pipe(notify({message: 'Main Styles concat task complete'}));
+        .pipe(gulp.dest(destDir));
 
     return gulp.src([
             appDir + 'resources/assets/src/common/navigation.css',
@@ -49,8 +45,7 @@ function task(cb, params) {
         .pipe(concat('main-ie.dist.css'))
         .pipe(importcss())
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(gulp.dest(destDir))
-        .pipe(notify({message: 'Main IE Styles concat task complete'}));
+        .pipe(gulp.dest(destDir));
 }
 
 module.exports = task;
