@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var importcss = require('gulp-import-css');
-var minifycssOptions = {compatibility: 'ie7,ie8,+properties.iePrefixHack,+properties.ieSuffixHack,+colors.opacity,-units.pt'};
+var minifycssOptions = require('../options.config').minifyOptions;
 
 var rename = require('gulp-rename'),
     uglify = require('gulp-uglify'),

@@ -1,0 +1,1 @@
+exports.minifyOptions = {compatibility: 'ie7,ie8,+properties.iePrefixHack,+properties.ieSuffixHack,+colors.opacity,-units.ch,-units.in,-units.pc,-units.pt,-units.vh,-units.vm,-units.vmax,-units.vmin'};

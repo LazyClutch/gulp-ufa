@@ -3,8 +3,8 @@ var gulp = require('gulp');
 var importcss = require('gulp-import-css');
 var rename = require('gulp-rename');
 var autoprefixer = require('gulp-autoprefixer');
-var minifycss = require('gulp-minify-css'),
-    minifycssOptions = {compatibility: 'ie7,ie8,+properties.iePrefixHack,+properties.ieSuffixHack,+colors.opacity,-units.pt'};
+var minifycss = require('gulp-minify-css');
+var minifycssOptions = require('../options.config').minifyOptions;
 
 function task(cb, params) {
     var appDir = './' + params.app + '/';
