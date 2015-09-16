@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var rename = require('gulp-rename'),
     uglify = require('gulp-uglify'),
+    concat = require('gulp-concat'),
     minifycss = require('gulp-minify-css');
 var minifycssOptions = require('../options.config').minifyOptions;
 
@@ -75,11 +76,11 @@ function task(cb, params) {
 
     //autocomplete
     gulp.src([
-            './resources/bower/jquery-ui/ui/core.js',
-            './resources/bower/jquery-ui/ui/widget.js',
-            './resources/bower/jquery-ui/ui/position.js',
-            './resources/bower/jquery-ui/ui/menu.js',
-            './resources/bower/jquery-ui/ui/autocomplete.js'
+            appDir + 'resources/bower/jquery-ui/ui/core.js',
+            appDir + 'resources/bower/jquery-ui/ui/widget.js',
+            appDir + 'resources/bower/jquery-ui/ui/position.js',
+            appDir + 'resources/bower/jquery-ui/ui/menu.js',
+            appDir + 'resources/bower/jquery-ui/ui/autocomplete.js'
         ]).pipe(concat('search.box.js'))
         .pipe(gulp.dest(destDir))
         .pipe(rename({suffix: '.min'}))
