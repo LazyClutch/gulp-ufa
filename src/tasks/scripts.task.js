@@ -1,26 +1,28 @@
 var gulp = require('gulp');
 
 var browserify = require('browserify');
-var through = require('through2');
+var through = require('../../node_modules/browserify/node_modules/through2/through2');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var jshint = require('gulp-jshint');
 
+var gulpBrowserify = function() {
+    return through.obj(function (chunk, enc, callback) {
+        var self = this;
 
+        var b = browserify(chunk.path).bundle(function(err, buf) {
+            if (err) {
+                console.error('Error:', err.message);
+                return;
+            }
+            chunk.contents = buf;
+            self.push(chunk);
+            callback();
+        });
+    });
+};
 
 function task(cb, params) {
-    var gulpBrowserify = function() {
-        return through.obj(function (chunk, enc, callback) {
-            var self = this;
-
-            var b = browserify(chunk.path).bundle(function(err, buf) {
-                chunk.contents = buf;
-                self.push(chunk);
-                callback();
-            });
-        });
-    };
-
     var appDir = params.app + '/';
 
     return gulp.src(appDir + 'resources/assets/src/js/**/*.js')
@@ -32,6 +34,5 @@ function task(cb, params) {
         .pipe(uglify())
         .pipe(gulp.dest(appDir + 'public/dist/js'));
 }
-
 
 module.exports = task;

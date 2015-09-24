@@ -22,15 +22,13 @@
     "del": "^1.1.1",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.2.0",
-    "gulp-browserify": "^0.5.1",
     "gulp-concat": "^2.5.2",
     "gulp-imagemin": "^2.2.1",
     "gulp-import-css": "^0.1.2",
     "gulp-jshint": "^1.10.0",
     "gulp-minify-css": "^1.2.1",
     "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^1.2.0",
-    "through2": "^2.0.0"
+    "gulp-uglify": "^1.2.0"
   },
   "devDependencies": {
     "gulp-notify": "^2.2.0",
