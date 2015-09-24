@@ -91,19 +91,6 @@ Ufa.prototype.run = function() {
         gulp.start(app + ":" + self.task);
     });
 
-
-//    gulp.start();
-//    gulp.start('clean');
-//
-//    this.task;
-//
-//    if (this.task) {
-//        gulp.start('default');
-//    } else {
-//        gulp.start('all');
-//    }
-//
-//    gulp.start( 'scripts', 'styles');
 };
 
 module.exports = Ufa;

@@ -19,8 +19,6 @@ if (args[4]) {
     options.env = args[4].replace(/^--/, '');//e.g.: production dev
 }
 
-console.log('ufa start ...');
-
 var Ufa = require('../ufa');// class Ufa
 var ufa = new Ufa();
 
