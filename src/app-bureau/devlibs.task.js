@@ -1,3 +1,9 @@
+var gulp = require('gulp');
+var rename = require('gulp-rename'),
+    uglify = require('gulp-uglify'),
+    minifycss = require('gulp-minify-css');
+var minifycssOptions = require('../options.config').minifyOptions;
+
 function task(cb, params) {
     var appDir = params.app + '/';
     var destDir = appDir + 'resources/assets/src/lib';
