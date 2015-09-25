@@ -1,8 +1,12 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var rename = require('gulp-rename');
-
 function task(cb, params) {
+    if (params.context.env != 'dev') {
+        return false;
+    }
+
+    var gulp = require('gulp');
+    var sass = require('gulp-sass');
+    var rename = require('gulp-rename');
+
     var appDir = params.app + '/';
 
     gulp.src(appDir + 'resources/assets/scss/**/app.scss')
