@@ -17,10 +17,10 @@ function task(cb, params) {
             appDir + 'resources/assets/src/main.dist.js'
         ])
         .pipe(rename('main.js'))
-        .pipe(gulp.dest(appDir + 'public/v2' ))
+        .pipe(gulp.dest(appDir + builtRootDir ))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
-        .pipe(gulp.dest(appDir + 'public/v2/dist'));
+        .pipe(gulp.dest(appDir + builtRootDir + 'dist'));
 
     // Script IE
     gulp.src([

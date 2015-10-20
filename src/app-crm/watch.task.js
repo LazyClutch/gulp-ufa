@@ -12,8 +12,7 @@ function task(cb, params) {
         styles = app + ':styles',
         scripts = app + ':scripts',
         fonts = app + ':fonts',
-        images = app + ':images',
-        v1src = app + ':crm_v1src';
+        images = app + ':images';
     
     gulp.watch([appDir + 'resources/assets/src/common/common.js', appDir + 'resources/assets/src/main.css',  appDir + 'resources/assets/src/css/ui/dist/*.css',  appDir + 'resources/assets/src/css/uicrm/*.css'], [devmain, deploymain]);
 
