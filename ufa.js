@@ -22,6 +22,7 @@ Ufa.prototype.init = function (opts) {
     this.env = opts.env || '';//production + dev
     this.appDir = opts.appDir;
     this.taskDir = opts.taskDir;
+    this.bowerDir = opts.bowerDir || "bower_components";
 
     // init creating tasks.
     this.createTasks(opts.taskfiles);
@@ -70,6 +71,9 @@ Ufa.prototype.createTask = function (app, taskname, callback) {
         task: taskname,
         context: self
     };
+    if(taskname === 'devmain' || taskname === 'devlibs') {
+        params.bowerDir = this.bowerDir;
+    }
 
     // rename task name
     gulp.task(app + ":" + taskname, dependences, function(cb) {return callback(cb, params);});
