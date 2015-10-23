@@ -5,3 +5,4 @@ exports.app = '';
 exports.env = 'production';
 exports.task = 'default';
 exports.taskfiles = fs.readdirSync(this.taskDir);
+exports.bowerDir = 'bower';
