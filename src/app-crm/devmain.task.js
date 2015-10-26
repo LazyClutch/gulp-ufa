@@ -4,7 +4,7 @@ var concat = require('gulp-concat');
 var autoprefixer = require('gulp-autoprefixer');
 
 function task(cb, params) {
-    var appDir = params.app + '/';
+    var appDir = params.context.bowerDir + '/';
     var destDir = appDir + 'resources/assets/src/';
     var bowerDir = params.bowerDir + '/';
     var notify = require('gulp-notify');

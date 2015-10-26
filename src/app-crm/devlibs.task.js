@@ -7,7 +7,7 @@ var minifycssOptions = require('../options.config').minifyOptions;
 
 function task(cb, params) {
     var appDir = params.app + '/';
-    var bowerDir = params.bowerDir + '/';
+    var bowerDir = params.context.bowerDir + '/';
     var destDir = appDir + 'resources/assets/src/lib/';
 
     // jquery-ui

@@ -71,9 +71,6 @@ Ufa.prototype.createTask = function (app, taskname, callback) {
         task: taskname,
         context: self
     };
-    if(taskname === 'devmain' || taskname === 'devlibs') {
-        params.bowerDir = this.bowerDir;
-    }
 
     // rename task name
     gulp.task(app + ":" + taskname, dependences, function(cb) {return callback(cb, params);});
