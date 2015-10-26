@@ -22,6 +22,7 @@ Ufa.prototype.init = function (opts) {
     this.env = opts.env || '';//production + dev
     this.appDir = opts.appDir;
     this.taskDir = opts.taskDir;
+    this.bowerDir = opts.bowerDir || "bower_components";
 
     // init creating tasks.
     this.createTasks(opts.taskfiles);

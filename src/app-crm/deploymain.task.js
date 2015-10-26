@@ -27,10 +27,10 @@ function task(cb, params) {
             appDir + 'resources/assets/src/main-ie.dist.js'
         ])
         .pipe(rename('main-ie.js'))
-        .pipe(gulp.dest(appDir + 'public/v2' ))
+        .pipe(gulp.dest(appDir + builtRootDir))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
-        .pipe(gulp.dest(appDir + 'public/v2/dist'));
+        .pipe(gulp.dest(appDir + builtRootDir + 'dist'));
 
     gulp.src([
             appDir + 'resources/assets/src/main.dist.css'
@@ -39,10 +39,10 @@ function task(cb, params) {
         .pipe(rename('main.css'))
         .pipe(importcss())
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(gulp.dest(appDir + 'public/v2' ))
+        .pipe(gulp.dest(appDir + builtRootDir))
         .pipe(rename({suffix: '.min'}))
         .pipe(minifycss(minifycssOptions))
-        .pipe(gulp.dest(appDir + 'public/v2/dist'));
+        .pipe(gulp.dest(appDir + builtRootDir + 'dist'));
 
     // Style IE
     gulp.src([
@@ -52,10 +52,10 @@ function task(cb, params) {
         .pipe(rename('main-ie.css'))
         .pipe(importcss())
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(gulp.dest(appDir + 'public/v2' ))
+        .pipe(gulp.dest(appDir + builtRootDir))
         .pipe(rename({suffix: '.min'}))
         .pipe(minifycss(minifycssOptions))
-        .pipe(gulp.dest(appDir + 'public/v2/dist'));
+        .pipe(gulp.dest(appDir + builtRootDir + 'dist'));
 }
 
 module.exports = task;
