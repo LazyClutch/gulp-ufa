@@ -1,5 +1,7 @@
 function task(cb, params) {
-
+    if (params.context.env != 'dev') {
+        return false;
+    }
 
     var gulp = require('gulp');
     var sass = require('gulp-sass');
