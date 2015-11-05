@@ -77,7 +77,7 @@ Ufa.prototype.createTask = function (app, taskname, callback) {
 };
 
 Ufa.prototype.getApps = function() {
-    return this.app ? [this.app] : ['app-site'];
+    return this.app ? [this.app] : ['app-site', 'app-platform', 'app-bureau', 'weichat-client'];
 };
 
 Ufa.prototype.formatTask = function(app, name) {
