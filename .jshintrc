@@ -2,7 +2,7 @@
     "undef": true,
     "unused": true,
     "browser": true,
-    "predef": ["define", "require", "requirejs", "Zepto", "$"],
+    "predef": ["define", "require", "requirejs", "Zepto", "$", "Backbone", "_", "exports"],
     "camelcase": true,
     "jquery": true,
     "qunit": true
