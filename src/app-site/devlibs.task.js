@@ -21,15 +21,21 @@ function task(cb, params) {
         .pipe(uglify())
         .pipe(gulp.dest(destDir));
 
-    gulp.src('./resources/bower/jquery.lazyload/jquery.lazyload.js')
+    gulp.src(appDir + './resources/bower/jquery.lazyload/jquery.lazyload.js')
         .pipe(gulp.dest(destDir))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
         .pipe(gulp.dest(destDir));
 
-    gulp.src('./resources/bower/highcharts/src/highcharts.min.js')
+    gulp.src(appDir + './resources/bower/highcharts/src/highcharts.min.js')
         .pipe(gulp.dest(destDir))
         .pipe(rename('highcharts.js'))
+        .pipe(gulp.dest(destDir));
+
+    //weichat
+    gulp.src(appDir + './resources/bower/weichat/dist/js/*')
+        .pipe(gulp.dest(destDir));
+    gulp.src(appDir + './resources/bower/weichat/dist/css/*')
         .pipe(gulp.dest(destDir));
 }
 
