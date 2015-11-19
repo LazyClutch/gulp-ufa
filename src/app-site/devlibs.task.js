@@ -32,10 +32,17 @@ function task(cb, params) {
         .pipe(rename('highcharts.js'))
         .pipe(gulp.dest(destDir));
 
-    //weichat
+    // weichat
     gulp.src(appDir + './resources/bower/weichat/dist/js/*')
         .pipe(gulp.dest(destDir));
     gulp.src(appDir + './resources/bower/weichat/dist/css/*')
+        .pipe(gulp.dest(destDir));
+
+    // angular
+    gulp.src(appDir + './resources/bower/angular/angular.js')
+        .pipe(gulp.dest(destDir))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(uglify())
         .pipe(gulp.dest(destDir));
 }
 
