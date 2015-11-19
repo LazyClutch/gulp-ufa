@@ -27,10 +27,11 @@ function task(cb, params) {
     var destDir = appDir + 'resources/assets/src';
 
     gulp.src([
-        appDir + 'resources/assets/src/navigation.js'
+        appDir + 'resources/assets/src/navigation.js',
+        appDir + 'resources/assets/src/common/track.js',
     ])
         .pipe(gulpBrowserify())
-        .pipe(rename('navigation.dist.js'))
+        .pipe(rename({suffix: '.dist'}))
         .pipe(gulp.dest(appDir + 'resources/assets/src/common'));
 
     /* Main Javascript file. */
@@ -39,7 +40,7 @@ function task(cb, params) {
             appDir + 'resources/assets/src/common/main.js',
             appDir + 'resources/assets/src/common/namespace.js',
             appDir + 'resources/assets/src/common/common.js',
-            appDir + 'resources/assets/src/common/track.js',
+            appDir + 'resources/assets/src/common/track.dist.js',
             appDir + 'resources/assets/src/common/ajax.js',
             appDir + 'resources/assets/src/common/navigation.dist.js'
         ])
@@ -52,7 +53,7 @@ function task(cb, params) {
         appDir + 'resources/assets/src/common/main.js',
         appDir + 'resources/assets/src/common/namespace.js',
         appDir + 'resources/assets/src/common/common.js',
-        appDir + 'resources/assets/src/common/track.js',
+        appDir + 'resources/assets/src/common/track.dist.js',
         appDir + 'resources/assets/src/common/ajax.js',
         appDir + 'resources/assets/src/common/navigation.dist.js'
     ])
