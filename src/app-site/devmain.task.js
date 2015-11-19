@@ -53,7 +53,7 @@ function task(cb, params) {
         appDir + 'resources/assets/src/common/main.js',
         appDir + 'resources/assets/src/common/namespace.js',
         appDir + 'resources/assets/src/common/common.js',
-        appDir + 'resources/assets/src/common/track.js',
+        appDir + 'resources/assets/src/common/track.dist.js',
         appDir + 'resources/assets/src/common/ajax.js',
         appDir + 'resources/assets/src/common/navigation.dist.js'
     ])
