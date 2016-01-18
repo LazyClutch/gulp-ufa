@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 
 var browserify = require('browserify');
-var through = require('../../node_modules/browserify/node_modules/through2/through2');
+var through = require('through2');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var jshint = require('gulp-jshint');
