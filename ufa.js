@@ -23,6 +23,12 @@ Ufa.prototype.init = function (opts) {
     this.appDir = opts.appDir;
     this.taskDir = opts.taskDir;
     this.bowerDir = opts.bowerDir || "bower_components";
+    this.appSibling = '';
+
+    if(this.app == 'okrs') {
+        this.appSibling = this.app;
+        this.app = '.';
+    }
 
     // init creating tasks.
     this.createTasks(opts.taskfiles);
@@ -59,15 +65,13 @@ Ufa.prototype.createTasks = function (files) {
 Ufa.prototype.createTask = function (app, taskname, callback) {
     // create single task
     var self = this;
-    //TODO::clean
     var dependences = (['default', 'all'].indexOf(taskname) != -1 )? [app + ':clean'] : [];
 
     if (this.env === 'dev') {
         console.log('>> Create New Task: ' + app + ':' + taskname);
     }
-
     var params = {
-        app: app,
+        app: this.app,
         task: taskname,
         context: self
     };
@@ -77,7 +81,9 @@ Ufa.prototype.createTask = function (app, taskname, callback) {
 };
 
 Ufa.prototype.getApps = function() {
-    return this.app ? [this.app] : ['app-site', 'app-platform', 'app-bureau', 'weichat-client'];
+    var app = this.app === '.' ? this.appSibling : this.app;
+
+    return app ? [app] : ['app-site', 'app-platform', 'app-bureau', 'weichat-client'];
 };
 
 Ufa.prototype.formatTask = function(app, name) {
@@ -85,7 +91,6 @@ Ufa.prototype.formatTask = function(app, name) {
 };
 
 Ufa.prototype.run = function() {
-
     var apps = this.getApps();
     var self = this;
     apps.forEach(function(app){
