@@ -24,7 +24,8 @@ function task(cb, params) {
         .pipe(gulp.dest(destDir))
     /* Main css file. */
     gulp.src([
-            appDir + 'resources/assets/src/main.css'
+            appDir + 'resources/assets/src/main.css',
+            appDir + 'resources/assets/src/theme.css'
         ])
         // .pipe(sass({ style: 'expanded' }))
         .pipe(concat('main.dist.css'))
@@ -33,7 +34,9 @@ function task(cb, params) {
         .pipe(gulp.dest(destDir))
 
     return gulp.src([
-            appDir + 'resources/assets/src/main-ie.css'
+            appDir + 'resources/assets/src/main-ie.css',
+            appDir + 'resources/assets/src/theme.css',
+            appDir + 'resources/assets/src/theme-ie.css'
         ])
         .pipe(concat('main-ie.dist.css'))
         .pipe(importcss())
