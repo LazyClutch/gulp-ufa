@@ -23,12 +23,6 @@ Ufa.prototype.init = function (opts) {
     this.appDir = opts.appDir;
     this.taskDir = opts.taskDir;
     this.bowerDir = opts.bowerDir || "bower_components";
-    this.appSibling = '';
-
-    if(this.app == 'okrs') {
-        this.appSibling = this.app;
-        this.app = '.';
-    }
 
     // init creating tasks.
     this.createTasks(opts.taskfiles);

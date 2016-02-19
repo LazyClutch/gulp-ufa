@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 function task(cb, params) {
-    var app = params.app === '.' ? params.appSibling : params.app;
+    var app = params.app;
 
     if (params.context.env === 'dev') {
         console.log('= [App]: ', app, ' =');
