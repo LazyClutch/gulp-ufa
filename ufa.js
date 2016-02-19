@@ -65,7 +65,7 @@ Ufa.prototype.createTask = function (app, taskname, callback) {
         console.log('>> Create New Task: ' + app + ':' + taskname);
     }
     var params = {
-        app: this.app,
+        app: app,
         task: taskname,
         context: self
     };
