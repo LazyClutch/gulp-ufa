@@ -76,7 +76,6 @@ Ufa.prototype.createTask = function (app, taskname, callback) {
         task: taskname,
         context: self
     };
-
     // rename task name
     gulp.task(app + ":" + taskname, dependences, function(cb) {return callback(cb, params);});
 };

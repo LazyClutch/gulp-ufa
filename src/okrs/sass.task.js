@@ -18,7 +18,7 @@ function task(cb, params) {
         .pipe(rename('main.css'))
         .pipe(gulp.dest(appDir + 'resources/assets/src/'));
 
-    gulp.src(appDir + 'resources/assets/scss/**/*.scss')
+    gulp.src(appDir + 'resources/assets/scss/*.scss')
         .pipe(sass({
             includePaths: [appDir + 'resources/bower/foundation/scss'],
             outputStyle: 'expanded',

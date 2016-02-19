@@ -4,6 +4,10 @@ function task(cb, params) {
     var app = params.app,
         appDir = app + '/';
 
+    if(app === '.') {
+        app = params.appSibling;
+    }
+
     // tasks
     var devmain = app + ':devmain',
         deploymain = app + ':deploymain',
