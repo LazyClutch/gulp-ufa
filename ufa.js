@@ -59,19 +59,16 @@ Ufa.prototype.createTasks = function (files) {
 Ufa.prototype.createTask = function (app, taskname, callback) {
     // create single task
     var self = this;
-    //TODO::clean
     var dependences = (['default', 'all'].indexOf(taskname) != -1 )? [app + ':clean'] : [];
 
     if (this.env === 'dev') {
         console.log('>> Create New Task: ' + app + ':' + taskname);
     }
-
     var params = {
         app: app,
         task: taskname,
         context: self
     };
-
     // rename task name
     gulp.task(app + ":" + taskname, dependences, function(cb) {return callback(cb, params);});
 };
@@ -85,7 +82,6 @@ Ufa.prototype.formatTask = function(app, name) {
 };
 
 Ufa.prototype.run = function() {
-
     var apps = this.getApps();
     var self = this;
     apps.forEach(function(app){
