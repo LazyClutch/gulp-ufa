@@ -1,3 +1,4 @@
+var fs = require('fs');
 var path = require('path');
 
 var through = require('through2');
@@ -7,12 +8,29 @@ var manifestMapping = {};
 var assetsDir = '';
 
 var plugin = function(filepath) {
-    
-    manifestMapping = require(filepath) || {};
+
+    manifestMapping = getManifestContent(filepath);
     assetsDir = path.dirname(filepath);
 
   return through.obj(transformFn);
 };
+
+/**
+ * Get mapping object from manifest content
+ * @filepath string
+ * @return object
+ */
+function getManifestContent(filepath) {
+    var manifest = {};
+    try {
+        var content = fs.readFileSync(filepath, {encoding: 'utf8'});
+        manifest = JSON.parse(content);
+    } catch (e) {
+        console.error('Error: No manifest file under ' + filepath + '.');
+    }
+
+    return manifest;
+}
 
 /**
  * @param Buffer file 
