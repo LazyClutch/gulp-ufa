@@ -62,7 +62,7 @@ function task(cb, params) {
         .pipe(gulp.dest(destDir));
 
     // angular
-    gulp.src(appDir + './resources/bower/angular/angular.js')
+    return gulp.src(appDir + './resources/bower/angular/angular.js')
         .pipe(gulp.dest(destDir))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())

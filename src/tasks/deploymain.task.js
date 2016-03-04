@@ -43,7 +43,7 @@ function task(cb, params) {
         .pipe(gulp.dest(appDir + 'public/dist'));
 
     // Style IE
-    gulp.src([
+    return gulp.src([
             appDir + 'resources/assets/src/main-ie.dist.css'
         ])
 //        .pipe(sass({ style: 'expanded' }))

@@ -12,7 +12,8 @@ function task(cb, params) {
         app + ':' + 'scripts',
         app + ':' + 'styles',
         app + ':' + 'images',
-        app + ':' + 'fonts'
+        app + ':' + 'fonts',
+        app + ':' + 'prepare4cdn'
     );
 }
 

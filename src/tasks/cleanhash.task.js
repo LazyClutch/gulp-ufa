@@ -1,11 +1,6 @@
 var del = require('del');
 var folders = [
-    'public/dist',
-    'public/js',
-    'public/css',
-    'public/lib',
-    'public/image',
-    'public/font',
+    'storage/assets'
 ];
 
 function task(cb, params) {
