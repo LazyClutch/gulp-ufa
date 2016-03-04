@@ -61,6 +61,13 @@ Ufa.prototype.createTask = function (app, taskname, callback) {
     var self = this;
     var dependences = (['default', 'all'].indexOf(taskname) != -1 )? [app + ':clean'] : [];
 
+    // other dependences
+    var taskDeps = callback.dependences || [];
+    taskDeps.forEach(function(value, index){
+        dependences.push(app + ':' + value);
+    });
+    
+
     if (this.env === 'dev') {
         console.log('>> Create New Task: ' + app + ':' + taskname);
     }

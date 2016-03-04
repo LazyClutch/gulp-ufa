@@ -37,7 +37,7 @@ function task(cb, params) {
     /* Main Javascript file. */
     gulp.src([
             appDir + 'resources/bower/jquery/dist/jquery.min.js',
-            appDir + 'resources/assets/src/common/main.js',
+            appDir + 'resources/assets/src/common/main.dist.js',
             appDir + 'resources/assets/src/common/namespace.js',
             appDir + 'resources/assets/src/common/common.js',
             appDir + 'resources/assets/src/common/track.dist.js',
