@@ -1,4 +1,3 @@
-var fs = require('fs');
 var path = require('path');
 
 var through = require('through2');
@@ -9,30 +8,12 @@ var assetsDir = '';
 
 var plugin = function(filepath) {
     
-    manifestMapping = getManifestContent(filepath);
+    manifestMapping = require(filepath) || {};
     assetsDir = path.dirname(filepath);
 
   return through.obj(transformFn);
 };
 
-
-/**
- * Get mapping object from manifest content
- * @filepath string
- * @return object
- */
-function getManifestContent(filepath) {
-    var manifest = {};
-    try {
-        var content = fs.readFileSync(filepath, {encoding: 'utf8'});
-        manifest = JSON.parse(content);
-    } catch (e) {
-        console.error('Error: No manifest file under ' + manifest + '.');
-    }
-
-    return manifest;
-
-}
 /**
  * @param Buffer file 
  * JSON.stringify(file):
@@ -51,6 +32,17 @@ function getManifestContent(filepath) {
  *         "data":[123,...,125]
  *     }
  * }
+ * 
+ * 处理css里面的url问题过程参数举例:
+ *   file:        '/var/project/angejia/app-site/storage/assets/font/iconfont-a218059a.ttf'
+ *   filepath:    'iconfont.eot?#iefix' or '../../image/home.png'
+ *   urlParts:    ['iconfont.eot', '#iefix']
+ *   sep:         '?'
+ *   url:         'iconfont.eot'
+ *   normal url:  '/var/project/angejia/app-site/storage/assets/font/iconfont.eot'
+ *   manifest:    {'font/iconfont.eot': 'font/iconfont-sss.eot'}
+ *   relativePath:'font/iconfont.eot'
+ *   hashFile:    'font/iconfont-sss.eot'
  */
 function transformFn(file, encoding, callback) {
 
@@ -62,21 +54,11 @@ function transformFn(file, encoding, callback) {
         console.error('Error:', PLUGIN_NAME + 'Streams are not supported!');
         return callback();
     }
-    
+
     if (path.extname(file.path) != '.css') {
         this.push(file);
         return callback();
     }
-
-    // file:        '/var/project/angejia/app-site/storage/assets/font/iconfont-a218059a.ttf'
-    // filepath:    'iconfont.eot?#iefix' or '../../image/home.png'
-    // urlParts:    ['iconfont.eot', '#iefix']
-    // sep:         '?'
-    // url:         'iconfont.eot'
-    // normal url:  '/var/project/angejia/app-site/storage/assets/font/iconfont.eot'
-    // manifest:    {'font/iconfont.eot': 'font/iconfont-sss.eot'}
-    // relativePath:'font/iconfont.eot'
-    // hashFile:    'font/iconfont-sss.eot'
     
     var newContent = file.contents.toString();
 
@@ -107,27 +89,7 @@ function transformFn(file, encoding, callback) {
         var relativePath = path.relative(assetsDir, normalUrl);//TODO::assetsDir -> file.base
         var hashFile = path.basename(manifestMapping[relativePath.replace(/\.\/|\.\.\//, '')]);
 
-
         var newPath = fileDir + '/' + hashFile + (sep || '') + (urlParts[1] || '');
-
-        // console.log(
-        //         '\n======\n', 
-        //         '\n## url ##\n', url, 
-        //         '\n## process.cwd ##\n', process.cwd(), 
-        //         '\n## file.path ##\n', file.path, 
-        //         '\n## fileDir ##\n', fileDir, 
-        //         '\n## path.normalize ##\n', normalUrl,
-        //         '\n## path.relative ##\n', relativePath, 
-        //         '\n## newPath ##\n', newPath, 
-        //         '\n======\n'
-        // );
-
-        // @lvht
-        // url = url.split('?')[0];
-        // _path = path.normalize(path.dirname(file.path) + '/' + url);
-        // _path = path.relative(process.cwd(), _path);
-        // var hashedPath = path.dirname(url) + '/' + path.basename(hash[_path].path);
-        // var newUrl = "url('" + path.resolve('/assets', hashedPath) + "')";
 
         return 'url(' + newPath + ')';
     });

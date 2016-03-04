@@ -12,7 +12,6 @@ function task(cb, params) {
         .pipe(gulp.dest(hashDir))
 }
 
-// task.dependences = ['cleanhash'];
 task.dependences = ['cleanhash', 'deploymain', 'copylibs', 'scripts', 'styles', 'images', 'fonts']
 
 module.exports = task;
