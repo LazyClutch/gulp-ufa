@@ -102,12 +102,15 @@ function transformFn(file, encoding, callback) {
         var url = urlParts[0];
 
         var fileDir = path.dirname(url);
+        fileDir = (fileDir != '.') ? (fileDir + '/') : '';
 
         var normalUrl = path.normalize(path.dirname(file.path) + '/' + url);
-        var relativePath = path.relative(assetsDir, normalUrl);//TODO::assetsDir -> file.base
-        var hashFile = path.basename(manifestMapping[relativePath.replace(/\.\/|\.\.\//, '')]);
+        var relativePath = path.relative(file.base, normalUrl);//file.base == assetsDir
+        var hashFile = path.basename(manifestMapping[relativePath.replace(/\.\.\/|\.\//g, '')]);
 
-        var newPath = fileDir + '/' + hashFile + (sep || '') + (urlParts[1] || '');
+        var newPath = fileDir + hashFile + (sep || '') + (urlParts[1] || '');
+
+        // console.log(file.base, file.path, fileDir, relativePath, newPath);
 
         return 'url(' + newPath + ')';
     });
