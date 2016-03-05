@@ -5,7 +5,7 @@ var folders = [
     'public/css',
     'public/lib',
     'public/image',
-    'public/font',
+    'public/font'
 ];
 
 function task(cb, params) {
