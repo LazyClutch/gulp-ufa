@@ -2,7 +2,6 @@ var fs = require('fs');
 var path = require('path');
 
 var through = require('through2');
-var hash = require('gulp-hash');
 
 var manifestMapping = {};
 var assetsDir = '';
