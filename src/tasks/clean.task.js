@@ -1,11 +1,14 @@
 var del = require('del');
+// TODO::Refine folders.
 var folders = [
     'public/dist',
     'public/js',
     'public/css',
     'public/lib',
     'public/image',
-    'public/font'
+    'public/font',
+    'public/main-ie.*',
+    'public/main.*',
 ];
 
 function task(cb, params) {
@@ -14,7 +17,7 @@ function task(cb, params) {
         folders[i] = appDir + folder;
     });
 
-    return del(folders, cb);
+    return del(folders);
 }
 
 module.exports = task;
