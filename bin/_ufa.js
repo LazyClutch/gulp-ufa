@@ -1,23 +1,45 @@
-var args = process.argv;
-
 // load configuration
 var options = require('../config');
 
+var program = require('commander');
+program
+  .version('0.0.1')
+  .option('-p, --production', 'In production')
+  .option('-P, --production', 'In production')
+  .option('-dev, --dev', 'In dev')
+  .option('-dir, --dir [dir]', 'Deploy to the dir', options.dir)
+  .option('-hash, --hash [hash]', 'Set hash dir', options.hash)
+  .option('-tmp, --tmp [tmp]', 'Set tmp dir', options.tmp)
+  .parse(process.argv);
+
+// after program defination.
+var args = program.args;
 var len = args.length;
 
-if (args[2]) {
-    options.app = args[2];//e.g.: app-site
+if (program.production) {
+    options.env = 'production';
 }
-if (args[3]) {
-    if (/^--/.test(args[3])) {
-        options.env = args[3].replace(/^--/, '');//e.g.: production dev
-    } else {
-        options.task = args[3];//e.g.: scripts
-    }
+if (program.dev) {
+    options.env = 'dev';
 }
-if (args[4]) {
-    options.env = args[4].replace(/^--/, '');//e.g.: production dev
+if (program.dir) {
+    options.dir = program.dir;
 }
+if (program.hash) {
+    options.hash = program.hash;
+}
+if (program.tmp) {
+    options.tmp = program.tmp;
+}
+
+if (args[0]) {
+    options.app = args[0];//e.g.: app-site
+}
+if (args[1]) {
+    options.task = args[1];//e.g.: scripts
+}
+
+// options.argv = program;
 
 var Ufa = require('../ufa');// class Ufa
 var ufa = new Ufa();

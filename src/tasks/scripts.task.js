@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var gulpif = require('gulp-if');
 
 var browserify = require('browserify');
 var through = require('through2');
@@ -24,15 +25,18 @@ var gulpBrowserify = function() {
 
 function task(cb, params) {
     var appDir = params.app + '/';
+    var destDir = appDir + params.context.dir + 'js';
+
+    var isProduction = (params.context.env === 'production');
 
     return gulp.src(appDir + 'resources/assets/src/js/**/*.js')
-        .pipe(jshint(params.context.appDir + '.jshintrc'))
-        .pipe(jshint.reporter('default'))
+        .pipe(gulpif(! isProduction, jshint(params.context.appDir + '.jshintrc')))
+        .pipe(gulpif(! isProduction, jshint.reporter('default')))
         .pipe(gulpBrowserify())
-        .pipe(gulp.dest(appDir + 'public/js'))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(uglify())
-        .pipe(gulp.dest(appDir + 'public/dist/js'));
+        .pipe(gulpif(! isProduction, gulp.dest(destDir)))
+        .pipe(gulpif(isProduction, rename({suffix: '.min'})))
+        .pipe(gulpif(isProduction, uglify()))
+        .pipe(gulpif(isProduction, gulp.dest(destDir)));
 }
 
 module.exports = task;

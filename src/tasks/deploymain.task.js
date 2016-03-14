@@ -1,4 +1,6 @@
 var gulp = require('gulp');
+var gulpif = require('gulp-if');
+
 var importcss = require('gulp-import-css');
 var minifycssOptions = require('../options.config').minifyOptions;
 
@@ -10,25 +12,28 @@ var rename = require('gulp-rename'),
 
 function task(cb, params) {
     var appDir = params.app + '/';
+    var destDir = appDir + params.context.dir;
+
+    var isProduction = (params.context.env === 'production');
 
     gulp.src([
             appDir + 'resources/assets/src/main.dist.js'
         ])
         .pipe(rename('main.js'))
-        .pipe(gulp.dest(appDir + 'public'))
+        .pipe(gulpif(! isProduction, gulp.dest(destDir)))
         .pipe(rename({suffix: '.min'}))
-        .pipe(uglify())
-        .pipe(gulp.dest(appDir + 'public/dist'));
+        .pipe(gulpif(isProduction, uglify()))
+        .pipe(gulpif(isProduction, gulp.dest(destDir)));
 
     // Script IE
     gulp.src([
             appDir + 'resources/assets/src/main-ie.dist.js'
         ])
         .pipe(rename('main-ie.js'))
-        .pipe(gulp.dest(appDir + 'public'))
+        .pipe(gulpif(! isProduction, gulp.dest(destDir)))
         .pipe(rename({suffix: '.min'}))
-        .pipe(uglify())
-        .pipe(gulp.dest(appDir + 'public/dist'));
+        .pipe(gulpif(isProduction, uglify()))
+        .pipe(gulpif(isProduction, gulp.dest(destDir)));
 
     gulp.src([
             appDir + 'resources/assets/src/main.dist.css'
@@ -37,10 +42,10 @@ function task(cb, params) {
         .pipe(rename('main.css'))
         .pipe(importcss())
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(gulp.dest(appDir + 'public'))
+        .pipe(gulpif(! isProduction, gulp.dest(destDir)))
         .pipe(rename({suffix: '.min'}))
-        .pipe(minifycss(minifycssOptions))
-        .pipe(gulp.dest(appDir + 'public/dist'));
+        .pipe(gulpif(isProduction, minifycss(minifycssOptions)))
+        .pipe(gulpif(isProduction, gulp.dest(destDir)));
 
     // Style IE
     return gulp.src([
@@ -50,10 +55,10 @@ function task(cb, params) {
         .pipe(rename('main-ie.css'))
         .pipe(importcss())
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(gulp.dest(appDir + 'public'))
+        .pipe(gulpif(! isProduction, gulp.dest(destDir)))
         .pipe(rename({suffix: '.min'}))
-        .pipe(minifycss(minifycssOptions))
-        .pipe(gulp.dest(appDir + 'public/dist'));
+        .pipe(gulpif(isProduction, minifycss(minifycssOptions)))
+        .pipe(gulpif(isProduction, gulp.dest(destDir)));
 }
 
 module.exports = task;
