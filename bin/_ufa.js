@@ -3,7 +3,7 @@ var options = require('../config');
 
 var program = require('commander');
 program
-  .version('0.0.1')
+  .version('1.1.3')
   .option('-p, --production', 'In production')
   .option('-P, --production', 'In production')
   .option('-dev, --dev', 'In dev')
@@ -23,13 +23,13 @@ if (program.dev) {
     options.env = 'dev';
 }
 if (program.dir) {
-    options.dir = program.dir;
+    options.dir = (/\/$/.test(program.dir)) ? program.dir : program.dir + '/';
 }
 if (program.hash) {
-    options.hash = program.hash;
+    options.hash = (/\/$/.test(program.hash)) ? program.hash : program.hash + '/';
 }
 if (program.tmp) {
-    options.tmp = program.tmp;
+    options.tmp = (/\/$/.test(program.tmp)) ? program.tmp : program.tmp + '/';
 }
 
 if (args[0]) {

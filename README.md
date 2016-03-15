@@ -33,13 +33,12 @@ Make a uniform usage of gulp for Uniform Frontend Architecture.
 
 ## Usage
 
-Command format: `gulp-ufa $app $task --$env`
+Command format: `gulp-ufa $app $task --$env --dir $dir`
 
 ```
-gulp-ufa // run "default" task for all apps in dev
-gulp-ufa app-site// run "default" task for app-site in dev
-gulp-ufa app-web --production// run "default" task for app-web in production
-gulp-ufa app-boss scripts --production// run "scripts" task for app-boss in production
+gulp-ufa app-site// run "default" task for app-site in dev and dir is 'public/'
+gulp-ufa app-web -p --dir public/dist // run "default" task for app-web in production and dir is 'public/dist/'
+gulp-ufa app-boss scripts -p --dir public/dist // run "scripts" task for app-boss in production and dir is 'public/dist/'
 ```
 
 ## Create New Task
