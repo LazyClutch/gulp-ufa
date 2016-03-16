@@ -2,6 +2,7 @@
  * Created by root on 16-3-16.
  */
 var gulp = require('gulp');
+var gulpif = require('gulp-if');
 
 var browserify = require('browserify');
 var through = require('through2');
@@ -27,9 +28,10 @@ var gulpBrowserify = function() {
 
 function task(cb, params) {
     var appDir = params.app + '/';
+    var isProduction = (params.context.env === 'production');
 
     return gulp.src(appDir + 'resources/assets/src/js/**/*.js')
-        .pipe(jshint(appDir + '.jshintrc'))
+        .pipe(gulpif(! isProduction, jshint(params.context.appDir + '.jshintrc')))
         .pipe(jshint.reporter('default'))
         .pipe(gulpBrowserify())
         .pipe(gulp.dest(appDir + 'public/www/js'))
