@@ -4,13 +4,12 @@
 var gulp = require('gulp');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
-var libraryPath = './vendor/angejia/library/src/';
 
 function task(cb, params) {
     var appDir = params.app + '/';
     gulp.src(appDir +'resources/assets/sass/**/*.scss')
         .pipe(sass({
-            includePaths: [libraryPath + 'foundation/scss'],
+            includePaths: [appDir + 'resources/bower/foundation/scss'],
             outputStyle: 'expanded',
             errLogToConsole: true
         }).on('error', sass.logError))
