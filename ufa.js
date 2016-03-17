@@ -22,6 +22,7 @@ Ufa.prototype.init = function (opts) {
     this.env = opts.env || '';//production + dev
     this.dir = opts.dir;
     this.hash = opts.hash;
+    this.rule = opts.rule;
     this.tmp = opts.tmp;
     this.appDir = opts.appDir;
     this.taskDir = opts.taskDir;
@@ -43,8 +44,8 @@ Ufa.prototype.createTasks = function (files) {
 
             // override default task definition
             try{
-                if (fs.readFileSync(self.appDir + 'src/' + app + '/' + file)) {
-                    taskDefinition = self.appDir + 'src/' + app + '/' + file;
+                if (fs.readFileSync(self.appDir + 'src/' + (self.rule || app) + '/' + file)) {
+                    taskDefinition = self.appDir + 'src/' + (self.rule || app) + '/' + file;
                 }
             }catch(e) {
                 // Do nothing.
@@ -85,7 +86,7 @@ Ufa.prototype.createTask = function (app, taskname, callback) {
 };
 
 Ufa.prototype.getApps = function() {
-    return this.app ? [this.app] : ['app-site', 'app-platform', 'app-bureau', 'weichat-client','retrx-mgt'];
+    return this.app ? [this.app] : ['app-site', 'app-platform', 'app-bureau', 'weichat-client'];
 };
 
 Ufa.prototype.formatTask = function(app, name) {

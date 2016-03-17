@@ -6,6 +6,7 @@ program
   .version('1.1.3')
   .option('-p, --production', 'In production')
   .option('-P, --production', 'In production')
+  .option('-r, --rule [rule]', 'Rule name')
   .option('-dev, --dev', 'In dev')
   .option('-dir, --dir [dir]', 'Deploy to the dir', options.dir)
   .option('-hash, --hash [hash]', 'Set hash dir', options.hash)
@@ -21,6 +22,9 @@ if (program.production) {
 }
 if (program.dev) {
     options.env = 'dev';
+}
+if (program.rule) {
+    options.rule = program.rule;
 }
 if (program.dir) {
     options.dir = (/\/$/.test(program.dir)) ? program.dir : program.dir + '/';
