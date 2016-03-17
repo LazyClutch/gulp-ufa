@@ -79,12 +79,13 @@ Ufa.prototype.createTask = function (app, taskname, callback) {
         task: taskname,
         context: self
     };
+
     // rename task name
     gulp.task(app + ":" + taskname, dependences, function(cb) {return callback(cb, params);});
 };
 
 Ufa.prototype.getApps = function() {
-    return this.app ? [this.app] : ['app-site', 'app-platform', 'app-bureau', 'weichat-client'];
+    return this.app ? [this.app] : ['app-site', 'app-platform', 'app-bureau', 'weichat-client','retrx-mgt'];
 };
 
 Ufa.prototype.formatTask = function(app, name) {

@@ -14,7 +14,9 @@ function task(cb, params) {
             errLogToConsole: true
         }).on('error', sass.logError))
         .pipe(rename('main.css'))
-        .pipe(gulp.dest('./resources/assets/src/'));
+        .pipe(gulp.dest(appDir + 'resources/assets/src/'));
+
+    gulp.watch(appDir + 'resources/assets/scss/**/*.scss', ['sass', 'rem2px', 'deploymain']);
 }
 
 module.exports = task;

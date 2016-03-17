@@ -32,7 +32,7 @@ function task(cb, params) {
 
     return gulp.src(appDir + 'resources/assets/src/js/**/*.js')
         .pipe(gulpif(! isProduction, jshint(params.context.appDir + '.jshintrc')))
-        .pipe(jshint.reporter('default'))
+        .pipe(gulpif(! isProduction, jshint.reporter('default')))
         .pipe(gulpBrowserify())
         .pipe(gulp.dest(appDir + 'public/www/js'))
         .pipe(rename({suffix: '.min'}))
