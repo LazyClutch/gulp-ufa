@@ -43,7 +43,7 @@ console.log(appDir);
         appDir + 'resources/bower/jquery-ui/ui/position.js',
         appDir + 'resources/bower/jquery-ui/ui/menu.js',
         appDir + 'resources/bower/jquery-ui/ui/autocomplete.js'
-    ]).pipe(concat('search.box.js'))
+    ]).pipe(concat('autocomplete/autocomplete.js'))
         .pipe(gulp.dest(destDir))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
