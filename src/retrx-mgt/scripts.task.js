@@ -27,6 +27,7 @@ var gulpBrowserify = function() {
 };
 
 function task(cb, params) {
+
     var appDir = params.app + '/';
     var isProduction = (params.context.env === 'production');
 

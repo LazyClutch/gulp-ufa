@@ -9,9 +9,10 @@ var minifycss = require('gulp-minify-css');
 var minifycssOptions = require('../options.config').minifyOptions;
 
 function task(cb, params) {
-    var appDir = params.app + '/';
-    var destDir = appDir + 'resources/assets/src/lib';
 
+    var appDir = params.app+ '/';
+    var destDir = appDir + 'resources/assets/src/lib';
+console.log(appDir);
     // uploadify
     gulp.src(appDir + 'resources/bower/uploadify/*')
         .pipe(gulp.dest(destDir + '/uploadify'))
@@ -19,6 +20,7 @@ function task(cb, params) {
         .pipe(rename({suffix: '.min'}))
         .pipe(minifycss(minifycssOptions))
         .pipe(gulp.dest(destDir + '/uploadify'))
+
 
     // jquery-file-upload
     gulp.src(appDir + 'resources/bower/jquery-file-upload/js/**/*.js')
@@ -58,7 +60,7 @@ function task(cb, params) {
         .pipe(uglify())
         .pipe(gulp.dest(destDir + '/datetimepicker'))
 
-    gulp.src(appDir + 'resources/bower/datetimepicker/*.css')
+    return gulp.src(appDir + 'resources/bower/datetimepicker/*.css')
         .pipe(gulp.dest(destDir + '/datetimepicker'))
         .pipe(rename({suffix: '.min'}))
         .pipe(minifycss(minifycssOptions))

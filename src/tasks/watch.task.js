@@ -13,7 +13,7 @@ function task(cb, params) {
         scripts = app + ':scripts',
         fonts = app + ':fonts',
         images = app + ':images';
-    
+
     gulp.watch([appDir + 'resources/assets/src/main.js', appDir + 'resources/assets/src/main.css'], [devmain, deploymain]);
 
     // Watch lib files
