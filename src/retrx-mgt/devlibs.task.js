@@ -12,7 +12,7 @@ function task(cb, params) {
 
     var appDir = params.app+ '/';
     var destDir = appDir + 'resources/assets/src/lib';
-console.log(appDir);
+
     // uploadify
     gulp.src(appDir + 'resources/bower/uploadify/*')
         .pipe(gulp.dest(destDir + '/uploadify'))

@@ -16,7 +16,7 @@ var rename = require('gulp-rename'),
 
 function task(cb, params) {
     var appDir = params.app + '/';
-
+    var destDir = appDir + params.context.dir;
     var isProduction = (params.context.env === 'production');
 
     gulp.src([appDir + 'resources/assets/src/main.css',
@@ -25,10 +25,10 @@ function task(cb, params) {
             appDir + 'resources/assets/src/main.base-ie.css'])
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe(importcss())
-        .pipe(gulpif(! isProduction, gulp.dest(appDir + 'public/dist')))
+        .pipe(gulpif(! isProduction, gulp.dest(destDir)))
         .pipe(gulpif(isProduction, rename({suffix: '.min'})))
         .pipe(gulpif(isProduction, minifycss(minifycssOptions)))
-        .pipe(gulpif(isProduction, gulp.dest(appDir + 'public/dist')));
+        .pipe(gulpif(isProduction, gulp.dest(destDir)));
 
     return gulp.src([appDir + 'resources/assets/src/main.js',
                     appDir + 'resources/assets/src/main-ie.js',
@@ -38,7 +38,7 @@ function task(cb, params) {
         .pipe(gulpif(! isProduction, jshint.reporter('default')))
         .pipe(gulpif(isProduction, rename({suffix: '.min'})))
         .pipe(gulpif(isProduction, uglify()))
-        .pipe(gulp.dest(appDir + '/public/dist'));
+        .pipe(gulp.dest(destDir));
 
 
 }

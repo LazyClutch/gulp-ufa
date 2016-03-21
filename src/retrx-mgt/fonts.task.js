@@ -5,8 +5,9 @@ var gulp = require('gulp');
 
 function task(cb, params) {
     var appDir = params.app + '/';
+    var destDir = appDir + params.context.dir;
     return gulp.src(appDir + 'resources/assets/src/iconfont/**/*')
-        .pipe(gulp.dest(appDir + 'public/dist/iconfont'));
+        .pipe(gulp.dest(destDir + '/iconfont'));
 }
 
 module.exports = task;

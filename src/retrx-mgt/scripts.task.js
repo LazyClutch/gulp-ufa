@@ -29,16 +29,17 @@ var gulpBrowserify = function() {
 function task(cb, params) {
 
     var appDir = params.app + '/';
+    var destDir = appDir + params.context.dir;
     var isProduction = (params.context.env === 'production');
 
     return gulp.src(appDir + 'resources/assets/src/js/**/*.js')
         .pipe(gulpif(! isProduction, jshint(params.context.appDir + '.jshintrc')))
         .pipe(gulpif(! isProduction, jshint.reporter('default')))
         .pipe(gulpBrowserify())
-        .pipe(gulp.dest(appDir + 'public/www/js'))
+        .pipe(gulp.dest(destDir + '/js'))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
-        .pipe(gulp.dest(appDir + 'public/dist/js'));
+        .pipe(gulp.dest(destDir + '/js'));
 }
 
 module.exports = task;
