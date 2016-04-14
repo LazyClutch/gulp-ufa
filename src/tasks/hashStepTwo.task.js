@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var hash = require('gulp-rev');
+var del = require('del');
 var merge = require('merge-stream');
+var fixUrl = require('../plugins/fixurl.js');
 
 function task(cb, params) {
     var appDir = './' + params.app + '/';
@@ -10,14 +12,15 @@ function task(cb, params) {
 
     var isProduction = (params.context.env === 'production');
 
-    // After StepOne and StepTwo
-    // Just need to hash  files from `cache` and copy to `asset` folder.
-    return gulp.src(tmpDir + '_cache/**/*')
-            .pipe(hash())
-            .pipe(gulp.dest(tmpDir + 'assets/'))
-            .pipe(hash.manifest('manifest.json'))
-            .pipe(gulp.dest(hashDir));
+    // copy all resources to a new cache folder(fix url in pipe)
+    var manifest = hashDir + 'manifest.json';
+
+    return gulp.src(destDir + '**/*')
+                .pipe(fixUrl(manifest))
+                .pipe(gulp.dest(tmpDir + '_cache/'));
 }
 
-task.dependences = ['hashStepOne', 'hashStepTwo'];
+
+task.dependences = ['hashStepOne'];
+
 module.exports = task;

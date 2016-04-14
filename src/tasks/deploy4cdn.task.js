@@ -15,6 +15,6 @@ function task(cb, params) {
                .pipe(gulp.dest(destDir));
 }
 
-task.dependences = ['prepare4cdn'];
+task.dependences = ['hash'];
 
 module.exports = task;
