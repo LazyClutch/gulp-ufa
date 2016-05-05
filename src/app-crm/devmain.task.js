@@ -16,7 +16,6 @@ function task(cb, params) {
     gulp.src([
             appDir + 'resources/bower/html5shiv/dist/html5shiv.min.js',
             appDir + 'resources/bower/respond/dest/respond.min.js',
-            appDir + 'resources/bower/jquery-legacy/dist/jquery.min.js',
             appDir + 'resources/bower/ui/dist/js/app.js'
         ])
         .pipe(concat('main-ie.dist.js'))
