@@ -6,7 +6,7 @@ var rename = require('gulp-rename'),
 var minifycssOptions = require('../options.config').minifyOptions;
 
 function task(cb, params) {
-    var appDir = params.context.app + '/';
+    var appDir = params.app + '/';
     var destDir = appDir + 'resources/assets/src/lib';
 
     // uploadify
@@ -76,20 +76,16 @@ function task(cb, params) {
 
     //autocomplete
     gulp.src([
-        appDir + 'resources/bower/jquery-ui/ui/core.js',
-        appDir + 'resources/bower/jquery-ui/ui/widget.js',
-        appDir + 'resources/bower/jquery-ui/ui/position.js',
-        appDir + 'resources/bower/jquery-ui/ui/menu.js',
-        appDir + 'resources/bower/jquery-ui/ui/autocomplete.js'
-    ]).pipe(concat('search.box.js'))
+            appDir + 'resources/bower/jquery-ui/ui/core.js',
+            appDir + 'resources/bower/jquery-ui/ui/widget.js',
+            appDir + 'resources/bower/jquery-ui/ui/position.js',
+            appDir + 'resources/bower/jquery-ui/ui/menu.js',
+            appDir + 'resources/bower/jquery-ui/ui/autocomplete.js'
+        ]).pipe(concat('search.box.js'))
         .pipe(gulp.dest(destDir))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
         .pipe(gulp.dest(destDir));
-
-    // angejia-ui
-    gulp.src(appDir + 'resources/bower/angejia-ui/dist/js/component/*.js')
-        .pipe(gulp.dest(appDir + 'resources/assets/src/uiLib/js'))
 }
 
 module.exports = task;
