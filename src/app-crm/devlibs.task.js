@@ -18,17 +18,17 @@ function task(cb, params) {
         .pipe(gulp.dest(destDir + '/uploadify'))
 
     // jquery-file-upload
-    gulp.src(appDir + 'resources/bower/jquery-file-upload/js/**/*.js')
+    gulp.src(appDir + 'resources/bower/blueimp-file-upload/js/**/*.js')
         .pipe(gulp.dest(destDir + '/jquery-file-upload/js'))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
         .pipe(gulp.dest(destDir + '/jquery-file-upload/js'))
-    gulp.src(appDir + 'resources/bower/jquery-file-upload/css/*.css')
+    gulp.src(appDir + 'resources/bower/blueimp-file-upload/css/*.css')
         .pipe(gulp.dest(destDir + '/jquery-file-upload/css'))
         .pipe(rename({suffix: '.min'}))
         .pipe(minifycss(minifycssOptions))
         .pipe(gulp.dest(destDir + '/jquery-file-upload/css'))
-    gulp.src(appDir + 'resources/bower/jquery-file-upload/img/*')
+    gulp.src(appDir + 'resources/bower/blueimp-file-upload/img/*')
         .pipe(gulp.dest(destDir + '/jquery-file-upload/img'))
 
     // jquery-ui-widget
