@@ -3,14 +3,14 @@ var options = require('../config');
 
 var program = require('commander');
 program
-  .version('1.1.3')
+  .version('1.2.0')
   .option('-p, --production', 'In production')
   .option('-P, --production', 'In production')
+  .option('-d, --dev', 'In dev')
   .option('-r, --rule [rule]', 'Rule name')
-  .option('-dev, --dev', 'In dev')
-  .option('-dir, --dir [dir]', 'Deploy to the dir', options.dir)
-  .option('-hash, --hash [hash]', 'Set hash dir', options.hash)
-  .option('-tmp, --tmp [tmp]', 'Set tmp dir', options.tmp)
+  .option('-t, --tmp [tmp]', 'Set tmp dir', options.tmp)
+  .option('--dir [dir]', 'Deploy to the dir', options.dir)
+  .option('--hash [hash]', 'Set hash dir', options.hash)
   .parse(process.argv);
 
 // after program defination.

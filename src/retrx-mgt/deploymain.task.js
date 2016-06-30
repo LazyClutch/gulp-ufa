@@ -18,29 +18,33 @@ function task(cb, params) {
     var appDir = params.app + '/';
     var destDir = appDir + params.context.dir;
     var isProduction = (params.context.env === 'production');
+    var sources = [];
 
-    gulp.src([appDir + 'resources/assets/src/main.css',
+    if (isProduction) {
+        sources = [
+            appDir + 'resources/assets/src/main.min.css',
+            appDir + 'resources/assets/src/main.base.min.css',
+            appDir + 'resources/assets/src/main-ie.min.css',
+            appDir + 'resources/assets/src/main.base-ie.min.css',
+            appDir + 'resources/assets/src/main.min.js',
+            appDir + 'resources/assets/src/main-ie.min.js',
+            appDir + 'resources/assets/src/main.base.min.js',
+            appDir + 'resources/assets/src/main.base-ie.min.js'
+        ];
+    } else {
+        sources = [
+            appDir + 'resources/assets/src/main.css',
             appDir + 'resources/assets/src/main.base.css',
             appDir + 'resources/assets/src/main-ie.css',
-            appDir + 'resources/assets/src/main.base-ie.css'])
-        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(importcss())
-        .pipe(gulpif(! isProduction, gulp.dest(destDir)))
-        .pipe(gulpif(isProduction, rename({suffix: '.min'})))
-        .pipe(gulpif(isProduction, minifycss(minifycssOptions)))
-        .pipe(gulpif(isProduction, gulp.dest(destDir)));
+            appDir + 'resources/assets/src/main.base-ie.css',
+            appDir + 'resources/assets/src/main.js',
+            appDir + 'resources/assets/src/main-ie.js',
+            appDir + 'resources/assets/src/main.base.js',
+            appDir + 'resources/assets/src/main.base-ie.js'
+        ];
+    }
 
-    return gulp.src([appDir + 'resources/assets/src/main.js',
-                    appDir + 'resources/assets/src/main-ie.js',
-                    appDir + 'resources/assets/src/main.base.js',
-                    appDir + 'resources/assets/src/main.base-ie.js'])
-        .pipe(gulpif(! isProduction, jshint(params.context.appDir + '.jshintrc')))
-        .pipe(gulpif(! isProduction, jshint.reporter('default')))
-        .pipe(gulpif(isProduction, rename({suffix: '.min'})))
-        .pipe(gulpif(isProduction, uglify()))
-        .pipe(gulp.dest(destDir));
-
-
+    return gulp.src(sources).pipe(gulp.dest(destDir));
 }
 
 module.exports = task;

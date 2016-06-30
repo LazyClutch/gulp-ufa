@@ -4,21 +4,56 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var importcss = require('gulp-import-css');
-var rename = require('gulp-rename'),
-    uglify = require('gulp-uglify');
 var autoprefixer = require('gulp-autoprefixer');
+var rename = require('gulp-rename');
+var uglify = require('gulp-uglify');
+var minifycss = require('gulp-minify-css');
+var minifycssOptions = require('../options.config').minifyOptions;
 
 function task(cb, params) {
 
     var notify = require('gulp-notify');
+    var jshint = require('gulp-jshint');
+
     var appDir = params.app + '/';
+    var destDir = appDir + 'resources/assets/src';
+
+
+
+    // gulp.src([appDir + 'resources/assets/src/main.css',
+    //         appDir + 'resources/assets/src/main.base.css',
+    //         appDir + 'resources/assets/src/main-ie.css',
+    //         appDir + 'resources/assets/src/main.base-ie.css'])
+    //     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    //     .pipe(importcss())
+    //     .pipe(gulpif(! isProduction, gulp.dest(destDir)))
+    //     .pipe(gulpif(isProduction, rename({suffix: '.min'})))
+    //     .pipe(gulpif(isProduction, minifycss(minifycssOptions)))
+    //     .pipe(gulpif(isProduction, gulp.dest(destDir)));
+
+    // return gulp.src([appDir + 'resources/assets/src/main.js',
+    //                 appDir + 'resources/assets/src/main-ie.js',
+    //                 appDir + 'resources/assets/src/main.base.js',
+    //                 appDir + 'resources/assets/src/main.base-ie.js'])
+    //     .pipe(gulpif(! isProduction, jshint(params.context.appDir + '.jshintrc')))
+    //     .pipe(gulpif(! isProduction, jshint.reporter('default')))
+    //     .pipe(gulpif(isProduction, rename({suffix: '.min'})))
+    //     .pipe(gulpif(isProduction, uglify()))
+    //     .pipe(gulp.dest(destDir));
+
+    // main
     gulp.src([
             appDir + 'resources/bower/jquery/dist/jquery.min.js',
             appDir + 'resources/assets/src/common/common.js'
         ])
         .pipe(concat('main.js'))
-        .pipe(gulp.dest(appDir + 'resources/assets/src'))
-        .pipe(notify({message: 'Main Scripts (not IE) concat task complete'}));
+        .pipe(jshint(params.context.appDir + '.jshintrc'))
+        .pipe(jshint.reporter('default'))
+        .pipe(gulp.dest(destDir))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(uglify())
+        .pipe(gulp.dest(destDir));
+
     // IE
     gulp.src([
             appDir + 'resources/bower/html5shiv/dist/html5shiv.min.js',
@@ -27,39 +62,27 @@ function task(cb, params) {
             appDir + 'resources/assets/src/common/common.js'
         ])
         .pipe(concat('main-ie.js'))
-        .pipe(gulp.dest(appDir + 'resources/assets/src'))
-        .pipe(notify({message: 'Main Scripts (IE) concat task complete'}));
-    /* Main css file. */
-    gulp.src([
-            appDir + 'resources/assets/src/main.css'
-        ])
-        // .pipe(sass({ style: 'expanded' }))
-        .pipe(concat('main.css'))
-        .pipe(importcss())
-        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(gulp.dest(appDir + '/resources/assets/src'))
-        .pipe(notify({message: 'Main Styles concat task complete'}));
+        .pipe(jshint(params.context.appDir + '.jshintrc'))
+        .pipe(jshint.reporter('default'))
+        .pipe(gulp.dest(destDir))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(uglify())
+        .pipe(gulp.dest(destDir));
 
-    gulp.src([
-            appDir + 'resources/assets/src/main-ie.css'
-        ])
-        .pipe(concat('main-ie.css'))
-        .pipe(importcss())
-        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(gulp.dest(appDir + 'resources/assets/src'))
-        .pipe(notify({message: 'Main IIE Styles concat task complete'}));
-
-
-
-
+    // main.base
     gulp.src([
             appDir + 'resources/bower/jquery/dist/jquery.min.js',
             appDir + 'resources/assets/ui/common/common.js',
             appDir + 'resources/assets/src/common/base.js'
         ])
         .pipe(concat('main.base.js'))
-        .pipe(gulp.dest('./resources/assets/src'))
-        .pipe(notify({message: 'Main Scripts (not IE) concat task complete'}));
+        .pipe(jshint(params.context.appDir + '.jshintrc'))
+        .pipe(jshint.reporter('default'))
+        .pipe(gulp.dest(destDir))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(uglify())
+        .pipe(gulp.dest(destDir));
+
     // IE
     gulp.src([
             appDir + 'resources/bower/html5shiv/dist/html5shiv.min.js',
@@ -69,8 +92,37 @@ function task(cb, params) {
             appDir + 'resources/assets/src/common/base.js'
         ])
         .pipe(concat('main.base-ie.js'))
-        .pipe(gulp.dest(appDir + 'resources/assets/src'))
-        .pipe(notify({message: 'Main Scripts (IE) concat task complete'}));
+        .pipe(jshint(params.context.appDir + '.jshintrc'))
+        .pipe(jshint.reporter('default'))
+        .pipe(gulp.dest(destDir))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(uglify())
+        .pipe(gulp.dest(destDir));
+
+    /* Main css file. */
+    gulp.src([
+            appDir + 'resources/assets/src/main.css'
+        ])
+        // .pipe(sass({ style: 'expanded' }))
+        .pipe(concat('main.css'))
+        .pipe(importcss())
+        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+        .pipe(gulp.dest(destDir))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(minifycss(minifycssOptions))
+        .pipe(gulp.dest(destDir));
+
+    gulp.src([
+            appDir + 'resources/assets/src/main-ie.css'
+        ])
+        .pipe(concat('main-ie.css'))
+        .pipe(importcss())
+        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+        .pipe(gulp.dest(destDir))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(minifycss(minifycssOptions))
+        .pipe(gulp.dest(destDir));
+
     /* Main css file. */
     gulp.src([
             appDir + 'resources/assets/ui/common/common.css',
@@ -80,8 +132,10 @@ function task(cb, params) {
         .pipe(concat('main.base.css'))
         .pipe(importcss())
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(gulp.dest(appDir + 'resources/assets/src'))
-        .pipe(notify({message: 'Main Styles concat task complete'}));
+        .pipe(gulp.dest(destDir))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(minifycss(minifycssOptions))
+        .pipe(gulp.dest(destDir));
 
     return gulp.src([
             appDir + 'resources/assets/ui/common/common.css',
@@ -90,8 +144,10 @@ function task(cb, params) {
         .pipe(concat('main.base-ie.css'))
         .pipe(importcss())
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(gulp.dest(appDir + 'resources/assets/src'))
-        .pipe(notify({message: 'Main IIE Styles concat task complete'}));
+        .pipe(gulp.dest(destDir))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(minifycss(minifycssOptions))
+        .pipe(gulp.dest(destDir));
 
 }
 
