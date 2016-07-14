@@ -18,29 +18,6 @@ function task(cb, params) {
     var appDir = params.app + '/';
     var destDir = appDir + 'resources/assets/src';
 
-
-
-    // gulp.src([appDir + 'resources/assets/src/main.css',
-    //         appDir + 'resources/assets/src/main.base.css',
-    //         appDir + 'resources/assets/src/main-ie.css',
-    //         appDir + 'resources/assets/src/main.base-ie.css'])
-    //     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-    //     .pipe(importcss())
-    //     .pipe(gulpif(! isProduction, gulp.dest(destDir)))
-    //     .pipe(gulpif(isProduction, rename({suffix: '.min'})))
-    //     .pipe(gulpif(isProduction, minifycss(minifycssOptions)))
-    //     .pipe(gulpif(isProduction, gulp.dest(destDir)));
-
-    // return gulp.src([appDir + 'resources/assets/src/main.js',
-    //                 appDir + 'resources/assets/src/main-ie.js',
-    //                 appDir + 'resources/assets/src/main.base.js',
-    //                 appDir + 'resources/assets/src/main.base-ie.js'])
-    //     .pipe(gulpif(! isProduction, jshint(params.context.appDir + '.jshintrc')))
-    //     .pipe(gulpif(! isProduction, jshint.reporter('default')))
-    //     .pipe(gulpif(isProduction, rename({suffix: '.min'})))
-    //     .pipe(gulpif(isProduction, uglify()))
-    //     .pipe(gulp.dest(destDir));
-
     // main
     gulp.src([
             appDir + 'resources/bower/jquery/dist/jquery.min.js',
