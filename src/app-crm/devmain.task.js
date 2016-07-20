@@ -13,6 +13,7 @@ function task(cb, params) {
 
     gulp.src([
             appDir + 'resources/bower/ui/dist/js/app.js',
+            appDir + 'resources/assets/src/common/common.js'
         ])
         .pipe(concat('main.js'))
         .pipe(gulp.dest(destDir))
@@ -24,7 +25,8 @@ function task(cb, params) {
     gulp.src([
             appDir + 'resources/bower/html5shiv/dist/html5shiv.min.js',
             appDir + 'resources/bower/respond/dest/respond.min.js',
-            appDir + 'resources/bower/ui/dist/js/app.js'
+            appDir + 'resources/bower/ui/dist/js/app.js',
+            appDir + 'resources/assets/src/common/common.js'
         ])
         .pipe(concat('main-ie.js'))
         .pipe(gulp.dest(destDir))
@@ -34,7 +36,8 @@ function task(cb, params) {
 
     /* Main css file. */
     gulp.src([
-            appDir + 'resources/bower/ui/dist/css/app-crm/app.css',
+            appDir + 'resources/bower/ui/dist/css/app-crm.css',
+            appDir + 'resources/assets/src/common/common.css'
         ])
         // .pipe(sass({ style: 'expanded' }))
         .pipe(concat('main.css'))
@@ -46,7 +49,8 @@ function task(cb, params) {
         .pipe(gulp.dest(destDir));
 
     return gulp.src([
-            appDir + 'resources/bower/ui/dist/css/app-crm/app.css',
+            appDir + 'resources/bower/ui/dist/css/app-crm.css',
+            appDir + 'resources/assets/src/common/common.css'
         ])
         .pipe(concat('main-ie.css'))
         .pipe(importcss())

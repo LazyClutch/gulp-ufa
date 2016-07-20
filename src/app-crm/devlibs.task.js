@@ -45,7 +45,13 @@ function task(cb, params) {
         .pipe(gulp.dest(destDir + '/jcrop/css'))
 
     // jquery-form-validator
-    gulp.src(appDir + 'resources/bower/jquery-form-validator/form-validator/*')
+    gulp.src([
+            appDir + 'resources/bower/jquery-form-validator/form-validator/jquery.form-validator.js',
+            appDir + 'resources/bower/jquery-form-validator/form-validator/date.js',
+            appDir + 'resources/bower/jquery-form-validator/form-validator/file.js'])
+        .pipe(gulp.dest(destDir + '/jquery-form-validator'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(uglify())
         .pipe(gulp.dest(destDir + '/jquery-form-validator'))
 
     // jquery datetimepicker
