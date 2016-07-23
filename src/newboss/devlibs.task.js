@@ -61,6 +61,10 @@ function task(cb, params) {
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
         .pipe(gulp.dest(destDir));
+
+    //custom component
+    gulp.src(appDir + 'resources/bower/AUI/js/*')
+        .pipe(gulp.dest(appDir + 'resources/assets/src/component/AUI'));
 }
 
 module.exports = task;
