@@ -72,7 +72,7 @@ function task(cb, params) {
 
     /* Main css file. */
     gulp.src([
-            appDir + 'resources/bower/AUI/dist/css/app-platform/main.css',
+            appDir + 'resources/bower/AUI/css/app-platform.css',
             appDir + 'resources/assets/src/common/navigation.css',
             appDir + 'resources/assets/src/common/footer.css',
             appDir + 'resources/assets/src/common/app.css',
@@ -89,7 +89,7 @@ function task(cb, params) {
         .pipe(gulp.dest(destDir));
 
     return gulp.src([
-            appDir + 'resources/bower/AUI/dist/css/app-platform/main.css',
+            appDir + 'resources/bower/AUI/css/app-platform.css',
             appDir + 'resources/assets/src/common/navigation.css',
             appDir + 'resources/assets/src/common/footer.css',
             appDir + 'resources/assets/src/common/app-ie.css',
