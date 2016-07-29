@@ -49,7 +49,7 @@ function task(cb, params) {
         .pipe(minifycss(minifycssOptions))
         .pipe(gulp.dest(destDir + '/datetimepicker'))
 
-    //autocomplete
+    // autocomplete
     gulp.src([
             appDir + 'resources/bower/jquery-ui/ui/core.js',
             appDir + 'resources/bower/jquery-ui/ui/widget.js',
@@ -61,6 +61,19 @@ function task(cb, params) {
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
         .pipe(gulp.dest(destDir));
+
+    // chosen
+    gulp.src(appDir + 'resources/bower/chosen/*.js')
+        .pipe(gulp.dest(destDir + '/chosen'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(uglify())
+        .pipe(gulp.dest(destDir + '/chosen'))
+
+    gulp.src(appDir + 'resources/bower/chosen/*.css')
+        .pipe(gulp.dest(destDir + '/chosen'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(minifycss(minifycssOptions))
+        .pipe(gulp.dest(destDir + '/chosen'))
 
     //custom component
     gulp.src(appDir + 'resources/bower/AUI/js/*')
