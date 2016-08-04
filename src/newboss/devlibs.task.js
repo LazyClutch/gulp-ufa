@@ -36,6 +36,10 @@ function task(cb, params) {
     gulp.src(appDir + 'resources/bower/jquery-form-validator/form-validator/*')
         .pipe(gulp.dest(destDir + '/jquery-form-validator'))
 
+    // jquery-ui-widget
+    gulp.src(appDir + 'resources/assets/src/lib/jquery-file-upload/js/vendor/*')
+        .pipe(gulp.dest(destDir));
+
     // jquery datetimepicker
     gulp.src(appDir + 'resources/bower/datetimepicker/*.js')
         .pipe(gulp.dest(destDir + '/datetimepicker'))
