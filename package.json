@@ -1,6 +1,6 @@
 {
   "name": "gulp-ufa",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "bin": {
     "gulp-ufa": "bin/ufa"
   },
