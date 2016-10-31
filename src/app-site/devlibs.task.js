@@ -61,6 +61,13 @@ function task(cb, params) {
     gulp.src(appDir + './resources/bower/weichat/dist/js/*')
         .pipe(gulp.dest(destDir));
 
+    //qrcodejs
+    gulp.src(appDir + './resources/bower/qrcodejs/qrcode.js')
+        .pipe(gulp.dest(destDir))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(uglify())
+        .pipe(gulp.dest(destDir));
+
     // angular
     return gulp.src(appDir + './resources/bower/angular/angular.js')
         .pipe(gulp.dest(destDir))
