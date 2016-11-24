@@ -13,6 +13,7 @@ function task(cb, params) {
 
     gulp.src([
             appDir + 'resources/bower/jquery/dist/jquery.min.js',
+            appDir + 'resources/assets/src/common/jQuery-ajaxTransport-XDomainRequest.js',
             appDir + 'resources/bower/AUI/dist/js/app.js',
             appDir + 'resources/assets/src/common/common.js'
         ])
@@ -27,6 +28,7 @@ function task(cb, params) {
             appDir + 'resources/bower/html5shiv/dist/html5shiv.min.js',
             appDir + 'resources/bower/respond/dest/respond.min.js',
             appDir + 'resources/bower/jquery-legacy/dist/jquery.min.js',
+            appDir + 'resources/assets/src/common/jQuery-ajaxTransport-XDomainRequest.js',
             appDir + 'resources/bower/AUI/dist/js/app.js',
             appDir + 'resources/assets/src/common/common.js'
         ])
