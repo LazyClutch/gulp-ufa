@@ -79,6 +79,9 @@ function task(cb, params) {
         .pipe(minifycss(minifycssOptions))
         .pipe(gulp.dest(destDir + '/chosen'))
 
+    gulp.src(appDir + 'resources/bower/chosen/*.png')
+        .pipe(gulp.dest(destDir + '/chosen'))
+
     //custom component
     gulp.src(appDir + 'resources/bower/AUI/js/*')
         .pipe(gulp.dest(appDir + 'resources/assets/src/component/AUI'));
