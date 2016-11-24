@@ -12,6 +12,7 @@ function task(cb, params) {
     var destDir = appDir + 'resources/assets/src';
 
     gulp.src([
+            appDir + 'resources/bower/jquery/dist/jquery.js',
             appDir + 'resources/bower/ui/dist/js/app.js',
             appDir + 'resources/assets/src/common/common.js'
         ])
@@ -25,6 +26,7 @@ function task(cb, params) {
     gulp.src([
             appDir + 'resources/bower/html5shiv/dist/html5shiv.min.js',
             appDir + 'resources/bower/respond/dest/respond.min.js',
+            appDir + 'resources/bower/jquery/dist/jquery.js',
             appDir + 'resources/bower/ui/dist/js/app.js',
             appDir + 'resources/assets/src/common/common.js'
         ])
