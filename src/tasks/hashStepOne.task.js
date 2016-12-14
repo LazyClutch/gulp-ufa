@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var hash = require('gulp-rev');
 var del = require('del');
-var merge = require('merge-stream');
 
 function task(cb, params) {
     var appDir = './' + params.app + '/';
@@ -21,19 +20,9 @@ function task(cb, params) {
     // for more details, please refer to https://github.com/sindresorhus/gulp-rev/issues/123
     var manifestOptions = {path: hashDir + 'manifest.json', merge: true, base: hashDir};
 
-    var hashImage = gulp.src([destDir + 'image/**'], {base: destDir})
-                                    .pipe(hash())
-                                    .pipe(gulp.dest(tmpDir + '_step1/image/'))
-                                    .pipe(hash.manifest(manifestOptions))
-                                    .pipe(gulp.dest(hashDir));
-
-    var hashFont = gulp.src([destDir + 'font/**'], {base: destDir})
-                                    .pipe(hash())
-                                    .pipe(gulp.dest(tmpDir + '_step1/font/'))
-                                    .pipe(hash.manifest(manifestOptions))
-                                    .pipe(gulp.dest(hashDir));
-
-    var hashLibSource = gulp.src([
+    var hashSource = gulp.src([
+                                        destDir + 'image/**',
+                                        destDir + 'font/**',
                                         destDir + 'lib/**/*.PNG',
                                         destDir + 'lib/**/*.png',
                                         destDir + 'lib/**/*.jpg',
@@ -52,7 +41,7 @@ function task(cb, params) {
                                     .pipe(hash.manifest(manifestOptions))
                                     .pipe(gulp.dest(hashDir));
 
-    return merge(hashImage, hashFont, hashLibSource);
+    return hashSource;
 }
 
 task.dependences = ['deploymain', 'copylibs', 'scripts', 'styles', 'images', 'fonts'];
