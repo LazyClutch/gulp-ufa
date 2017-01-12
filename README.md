@@ -1,6 +1,6 @@
 # Gulp UFA
 
-Make a uniform usage of gulp for Uniform Frontend Architecture.
+**U**niform **F**rontend **A**rchitecture: An uniform usage of gulp.
 
 ## Pain Points
  1. Different applications have different configurations.
@@ -36,9 +36,14 @@ Make a uniform usage of gulp for Uniform Frontend Architecture.
 Command format: `gulp-ufa $app $task --$env --dir $dir`
 
 ```
-gulp-ufa app-site// run "default" task for app-site in production and dir is 'public/dist/'
-gulp-ufa app-web -p --dir public/dist // run "default" task for app-web in production and dir is 'public/dist/'
-gulp-ufa app-boss scripts -p --dir public/dist // run "scripts" task for app-boss in production and dir is 'public/dist/'
+// run "default" task for app-site in production and dir is 'public/dist/'
+gulp-ufa app-site
+
+// run "default" task for app-web in production and dir is 'public/dist/'
+gulp-ufa app-web -p --dir public/dist
+
+// run "scripts" task for app-boss in production and dir is 'public/dist/'
+gulp-ufa app-boss scripts -p --dir public/dist
 ```
 
 ## Create New Task
