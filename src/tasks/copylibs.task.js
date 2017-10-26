@@ -4,13 +4,10 @@ var gulpif = require('gulp-if');
 function task(cb, params) {
     var appDir = params.app + '/';
 
-    var destDir = appDir + params.context.dir + '/lib';
-
-    var isProduction = (params.context.env === 'production');
-
+    var destDir = appDir + params.context.dir + 'lib';
 
     return gulp.src(appDir + 'resources/assets/src/lib/**')
-        .pipe(gulpif(! isProduction, gulp.dest(destDir)))
+        .pipe(gulpif(true, gulp.dest(destDir)))
 }
 
 module.exports = task;
