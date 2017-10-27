@@ -20,6 +20,7 @@ function task(cb, params) {
 
 		gulp.src([
 			appDir + 'resources/assets/src/common/common.js',
+			appDir + 'resources/assets/src/common/jquery.js',
 			appDir + 'resources/assets/src/common/jQuery-ajaxTransport-XDomainRequest.js',
 		])
 			.pipe(concat('main.js'))
